@@ -3,6 +3,10 @@
 		<SiteNavbar />
 
 		<SectionHero />
+
+		<SectionIntro />
+
+		<SectionWorks />
 	</div>
 </template>
 

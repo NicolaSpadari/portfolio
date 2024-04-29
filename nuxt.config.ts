@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 				{ name: "format-detection", content: "no" }
 			],
 			bodyAttrs: {
-				class: "font-text"
+				class: ["font-text", "antialiased"]
 			},
 			link: [
 				{ rel: "shortcut-icon", href: "/favicon.svg" }

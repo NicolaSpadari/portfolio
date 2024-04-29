@@ -11,8 +11,10 @@ import {
 } from "unocss";
 
 export default defineConfig({
+	safelist: ["font-text", "antialiased", "i-carbon-logo-github", "i-carbon-logo-linkedin"],
 	shortcuts: [
 		["crate", "mx-auto max-w-7xl px-4 lg:px-8 sm:px-6"],
+		["crate-boxed", "mx-auto max-w-3xl px-4 lg:px-8 sm:px-6"],
 		["flex-center", "flex justify-center items-center"]
 	],
 	presets: [
@@ -28,7 +30,10 @@ export default defineConfig({
 		presetTypography(),
 		presetWebFonts({
 			fonts: {
-				text: "Inter"
+				text: {
+					name: "Inter",
+					weights: [300, 400, 700]
+				}
 			}
 		})
 	],

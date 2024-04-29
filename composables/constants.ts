@@ -1,4 +1,7 @@
 export const useConstants = () => {
+	const name = "Nicola";
+	const surname = "Spadari";
+
 	const sections = [
 		{
 			label: "Work",
@@ -36,6 +39,8 @@ export const useConstants = () => {
 	];
 
 	return {
+		name,
+		surname,
 		sections,
 		socials
 	};
