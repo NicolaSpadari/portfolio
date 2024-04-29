@@ -2,7 +2,7 @@
 	<div sticky top-0 w-full bg-lime-50 py-5>
 		<div crate>
 			<div flex justify-between>
-				<NuxtLink to="#" text-lg>
+				<NuxtLink to="#">
 					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 				</NuxtLink>
 

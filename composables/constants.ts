@@ -1,6 +1,7 @@
 export const useConstants = () => {
 	const name = "Nicola";
 	const surname = "Spadari";
+	const currentYear = new Date().getFullYear();
 
 	const sections = [
 		{
@@ -29,11 +30,13 @@ export const useConstants = () => {
 		{
 			icon: "i-carbon-logo-github",
 			id: "github",
+			label: "GitHub",
 			link: "https://github.com/NicolaSpadari"
 		},
 		{
 			icon: "i-carbon-logo-linkedin",
 			id: "linkedin",
+			label: "LinkedIn",
 			link: "https://linkedin.com/in/nicolaspadari"
 		}
 	];
@@ -41,6 +44,7 @@ export const useConstants = () => {
 	return {
 		name,
 		surname,
+		currentYear,
 		sections,
 		socials
 	};

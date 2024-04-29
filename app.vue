@@ -13,6 +13,16 @@
 		<SectionAbout />
 
 		<SectionExperiences />
+
+		<SectionSkills />
+
+		<SectionInterests />
+
+		<SectionTouch />
+
+		<SectionPhoto />
+
+		<SiteFooter />
 	</div>
 </template>
 

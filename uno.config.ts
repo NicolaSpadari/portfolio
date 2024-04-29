@@ -13,9 +13,10 @@ import {
 export default defineConfig({
 	safelist: ["font-text", "antialiased", "i-carbon-logo-github", "i-carbon-logo-linkedin"],
 	shortcuts: [
-		["crate", "mx-auto max-w-7xl px-4 lg:px-8 sm:px-6"],
-		["crate-boxed", "mx-auto max-w-3xl px-4 lg:px-8 sm:px-6"],
-		["flex-center", "flex justify-center items-center"]
+		["crate", "mx-auto max-w-7xl px-10"],
+		["crate-boxed", "mx-auto max-w-3xl px-10"],
+		["flex-center", "flex justify-center items-center"],
+		["size-full", "w-full h-full"]
 	],
 	presets: [
 		presetUno(),
