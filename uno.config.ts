@@ -32,7 +32,7 @@ export default defineConfig({
 			fonts: {
 				text: {
 					name: "Inter",
-					weights: [300, 400, 700]
+					weights: [300, 400, 500]
 				}
 			}
 		})
