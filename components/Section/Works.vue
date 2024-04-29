@@ -1,5 +1,5 @@
 <template>
-	<section id="works">
+	<section id="works" border-t border-gray-200>
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div border-t-2 border-black>

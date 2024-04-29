@@ -7,6 +7,12 @@
 		<SectionIntro />
 
 		<SectionWorks />
+
+		<SectionWriting />
+
+		<SectionAbout />
+
+		<SectionExperiences />
 	</div>
 </template>
 

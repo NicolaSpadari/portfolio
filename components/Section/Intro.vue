@@ -1,5 +1,5 @@
 <template>
-	<section id="intro" border-b border-gray-200>
+	<section id="intro" border-t border-gray-200>
 		<div crate-boxed>
 			<div py-20 space-y-6 lg="space-y-8 py-30">
 				<p text-2xl lg="text-3xl">
