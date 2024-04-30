@@ -24,7 +24,21 @@
 		headers: useRequestHeaders(["cookie"]) as Record<string, string>
 	});
 
+	const { upToDesktop } = useConstants();
+
 	onMounted(() => {
+		useGsap.matchMedia().add(upToDesktop, () => {
+			useGsap.to(".interests-col", {
+				scrollTrigger: {
+					trigger: "#interests",
+					start: "top top",
+					pin: ".interests-col",
+					pinSpacing: false,
+					end: "bottom top+=20%"
+				}
+			});
+		});
+
 		useGsap.from(".cell", {
 			scrollTrigger: {
 				trigger: "#interests",
@@ -38,16 +52,6 @@
 				amount: 0.25,
 				from: "center",
 				grid: "auto"
-			}
-		});
-
-		useGsap.to(".interests-col", {
-			scrollTrigger: {
-				trigger: "#interests",
-				start: "top top",
-				pin: ".interests-col",
-				pinSpacing: false,
-				end: "bottom top+=20%"
 			}
 		});
 	});

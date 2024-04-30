@@ -27,15 +27,19 @@
 		headers: useRequestHeaders(["cookie"]) as Record<string, string>
 	});
 
+	const { upToDesktop } = useConstants();
+
 	onMounted(() => {
-		useGsap.to(".experience-col", {
-			scrollTrigger: {
-				trigger: "#experiences",
-				start: "top top",
-				pin: ".experience-col",
-				pinSpacing: false,
-				end: "bottom top+=20%"
-			}
+		useGsap.matchMedia().add(upToDesktop, () => {
+			useGsap.to(".experience-col", {
+				scrollTrigger: {
+					trigger: "#experiences",
+					start: "top top",
+					pin: ".experience-col",
+					pinSpacing: false,
+					end: "bottom top+=20%"
+				}
+			});
 		});
 
 		document.querySelectorAll(".experience").forEach((experience) => {

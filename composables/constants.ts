@@ -42,12 +42,15 @@ export const useConstants = () => {
 		}
 	];
 
+	const upToDesktop = "(min-width: 992px)";
+
 	return {
 		name,
 		surname,
 		email,
 		currentYear,
 		sections,
-		socials
+		socials,
+		upToDesktop
 	};
 };

@@ -26,15 +26,19 @@
 </template>
 
 <script lang="ts" setup>
+	const { upToDesktop } = useConstants();
+
 	onMounted(() => {
-		useGsap.to(".writing-title", {
-			scrollTrigger: {
-				trigger: "#writing",
-				start: "top top",
-				pin: ".writing-title",
-				pinSpacing: false,
-				end: "bottom top+=20%"
-			}
+		useGsap.matchMedia().add(upToDesktop, () => {
+			useGsap.to(".writing-title", {
+				scrollTrigger: {
+					trigger: "#writing",
+					start: "top top",
+					pin: ".writing-title",
+					pinSpacing: false,
+					end: "bottom top+=20%"
+				}
+			});
 		});
 
 		document.querySelectorAll(".post").forEach((post) => {

@@ -44,24 +44,28 @@
 </template>
 
 <script lang="ts" setup>
+	const { upToDesktop } = useConstants();
+
 	onMounted(() => {
-		useGsap.to(".about-title", {
-			scrollTrigger: {
-				trigger: "#about",
-				start: "top top",
-				pin: ".about-title",
-				pinSpacing: false,
-				end: "bottom top+=50%"
-			}
-		});
-		useGsap.to(".about-text", {
-			scrollTrigger: {
-				trigger: "#about",
-				start: "top top",
-				pin: ".about-text",
-				pinSpacing: false,
-				end: "bottom top+=50%"
-			}
+		useGsap.matchMedia().add(upToDesktop, () => {
+			useGsap.to(".about-title", {
+				scrollTrigger: {
+					trigger: "#about",
+					start: "top top",
+					pin: ".about-title",
+					pinSpacing: false,
+					end: "bottom top+=50%"
+				}
+			});
+			useGsap.to(".about-text", {
+				scrollTrigger: {
+					trigger: "#about",
+					start: "top top",
+					pin: ".about-text",
+					pinSpacing: false,
+					end: "bottom top+=50%"
+				}
+			});
 		});
 
 		useGsap.from(".about-desc", {

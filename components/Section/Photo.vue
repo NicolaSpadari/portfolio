@@ -11,9 +11,7 @@
 	const fullName = computed(() => `${name} ${surname}`);
 
 	onMounted(() => {
-		useGsap.fromTo(".image", {
-			scale: 1
-		}, {
+		useGsap.to(".image", {
 			scrollTrigger: {
 				trigger: "#photo",
 				start: "20% bottom",
