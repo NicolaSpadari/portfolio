@@ -3,7 +3,7 @@
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div grid grid-cols-1 gap-10 md="grid-cols-5 gap-8">
-					<div border-t-2 border-black md="col-span-2">
+					<div md="col-span-2" border-t-2 border-black>
 						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
 							Writing
 						</p>

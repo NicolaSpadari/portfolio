@@ -1,6 +1,6 @@
 <template>
 	<section id="photo" max-h="570px" overflow-hidden>
-		<NuxtImg :src="getPlaceholder(1920, 1080)" size-full object-cover object-cc :alt="fullName" />
+		<NuxtImg :src="getPlaceholder(1920, 1080)" size-full object-cover :alt="fullName" />
 	</section>
 </template>
 

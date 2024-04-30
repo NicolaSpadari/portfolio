@@ -4,7 +4,7 @@
 			<NuxtImg :src="getPlaceholder(1280, 720)" />
 		</div>
 		<div flex flex-col gap-1 px-8 md="px-0">
-			<p text-2xl font-medium space-x-2>
+			<p text-2xl font-medium space-x-2 z--1>
 				<span>Project</span>
 				<i-heroicons-solid-arrow-right h-7 w-7 />
 			</p>

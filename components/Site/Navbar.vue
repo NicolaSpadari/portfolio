@@ -1,5 +1,5 @@
 <template>
-	<div sticky top-0 w-full bg-lime-50 py-5>
+	<nav id="navbar" sticky top-0 w-full bg-lime-50 py-5>
 		<div crate>
 			<div flex justify-between>
 				<NuxtLink to="#">
@@ -14,7 +14,7 @@
 					</div>
 					<div flex items-center gap-8>
 						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" transition-opacity hover="opacity-65">
-							<span :class="social.icon" :font-controlled="false" w-7 h-7 />
+							<span :class="social.icon" :font-controlled="false" h-7 w-7 />
 						</NuxtLink>
 					</div>
 				</div>
@@ -31,10 +31,12 @@
 		<div relative>
 			<SiteMenu />
 		</div>
-	</div>
+	</nav>
 </template>
 
 <script lang="ts" setup>
 	const { sections, socials } = useConstants();
 	const { open } = useMenu();
+
+	onMounted(() => useGradient("#navbar"));
 </script>

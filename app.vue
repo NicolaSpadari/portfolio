@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<Body :class="{ 'overflow-y-hidden': open }">
 		<SiteNavbar />
 
 		<SectionHero />
@@ -23,8 +23,12 @@
 		<SectionPhoto />
 
 		<SiteFooter />
-	</div>
+	</Body>
 </template>
+
+<script lang="ts" setup>
+	const { open } = useMenu();
+</script>
 
 <style lang="scss">
 	html {

@@ -1,6 +1,7 @@
 export const useConstants = () => {
 	const name = "Nicola";
 	const surname = "Spadari";
+	const email = "spadari.nicola@gmail.com";
 	const currentYear = new Date().getFullYear();
 
 	const sections = [
@@ -44,6 +45,7 @@ export const useConstants = () => {
 	return {
 		name,
 		surname,
+		email,
 		currentYear,
 		sections,
 		socials

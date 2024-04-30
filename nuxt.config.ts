@@ -1,13 +1,11 @@
 import AutoImport from "unplugin-auto-import/vite";
-import { colors } from "@unocss/preset-mini";
-
-const dark800 = typeof colors?.dark === "string" ? colors?.dark : colors?.dark?.[800];
 
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/image",
+		"@hypernym/nuxt-gsap",
 		"nuxt-svgo"
 	],
 	app: {
@@ -16,7 +14,7 @@ export default defineNuxtConfig({
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
-				{ name: "theme-color", content: dark800 },
+				{ name: "theme-color", content: "#ffffff" },
 				{ name: "format-detection", content: "no" }
 			],
 			bodyAttrs: {
@@ -38,6 +36,12 @@ export default defineNuxtConfig({
 	],
 	svgo: {
 		autoImportPath: "./assets/"
+	},
+	gsap: {
+		composables: true,
+		extraPlugins: {
+			scrollTrigger: true
+		}
 	},
 	vite: {
 		plugins: [

@@ -1,9 +1,11 @@
 <template>
 	<section id="hero" h="40vh" bg-lime-50>
-		<div h-full crate-boxed>
+		<div crate-boxed h-full>
 			<div grid h-full items-center>
-				<p text-5xl text-dark lg="text-[5rem]">
-					{{ name }} {{ surname }}<br> Frontend web<br> developer
+				<p lg="text-[5rem]" overflow-hidden text-5xl text-dark>
+					<span class="line">{{ name }} {{ surname }}</span>
+					<span class="line">Frontend web</span>
+					<span class="line">developer</span>
 				</p>
 			</div>
 		</div>
@@ -12,4 +14,6 @@
 
 <script lang="ts" setup>
 	const { name, surname } = useConstants();
+
+	onMounted(() => useGradient("#hero"));
 </script>
