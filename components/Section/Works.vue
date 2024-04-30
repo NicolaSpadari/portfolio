@@ -25,14 +25,16 @@
 
 <script lang="ts" setup>
 	onMounted(() => {
-		useGsap.from(".works-content", {
-			scrollTrigger: {
-				trigger: "#works",
-				start: "20% bottom"
-			},
-			opacity: 0,
-			duration: 0.5,
-			delay: 0.5
+		useGsap.utils.toArray(".work").forEach((work: HTMLElement) => {
+			useGsap.from(work, {
+				scrollTrigger: {
+					trigger: work,
+					start: "20% bottom"
+				},
+				opacity: 0,
+				duration: 0.5,
+				delay: 0.5
+			});
 		});
 	});
 </script>
