@@ -15,5 +15,17 @@
 <script lang="ts" setup>
 	const { name, surname } = useConstants();
 
-	onMounted(() => useGradient("#hero"));
+	onMounted(() => {
+		useGradient("#hero");
+
+		useGsap.fromTo(".line", {
+			yPercent: -100,
+			opacity: 0
+		}, {
+			yPercent: 0,
+			opacity: 1,
+			stagger: 0.25,
+			duration: 0.5
+		});
+	});
 </script>

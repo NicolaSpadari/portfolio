@@ -18,7 +18,7 @@
 							</Btn>
 						</div>
 						<div flex flex-wrap gap-6>
-							<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" text-base>
+							<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" text-base transition-opacity hover="opacity-65">
 								{{ social.label }}
 							</NuxtLink>
 							<span text-base text-neutral-500>&copy; {{ currentYear }}</span>

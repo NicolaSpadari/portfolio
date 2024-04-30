@@ -12,7 +12,7 @@
 					<div lg="col-span-3">
 						<div flex flex-col gap-8>
 							<p text-xl lg="text-[22px]">
-								If you want to chat about a project &ndash; send me an email on <NuxtLink to="/" font-medium underline>
+								If you want to chat about a project &ndash; send me an email on <NuxtLink :to="`mailto:${email}`" font-medium underline transition-opacity hover="opacity-65">
 									hi@email.com
 								</NuxtLink>.
 							</p>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div lg="col-span-2" flex flex-col gap-3>
-						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" text-3xl font-medium underline>
+						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" hover="opacity-65" text-3xl font-medium underline transition-opacity>
 							{{ social.label }}
 						</NuxtLink>
 					</div>
@@ -36,5 +36,5 @@
 </template>
 
 <script lang="ts" setup>
-	const { socials } = useConstants();
+	const { socials, email } = useConstants();
 </script>
