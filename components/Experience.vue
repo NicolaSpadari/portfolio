@@ -1,5 +1,5 @@
 <template>
-	<div flex flex-col gap-4 py-8 lg="py-12">
+	<div class="experience" flex flex-col gap-4 py-8 lg="py-12">
 		<div flex flex-col>
 			<span font-medium text="28px">Experience</span>
 			<span text="28px">Senior Frontend Developer</span>

@@ -3,7 +3,7 @@
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div grid grid-cols-1 gap-10 md="grid-cols-12">
-					<div md="col-span-4" border-t-2 border-black>
+					<div class="writing-title" md="col-span-4" border-t-2 border-black>
 						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
 							Writing
 						</p>
@@ -24,3 +24,29 @@
 		</div>
 	</section>
 </template>
+
+<script lang="ts" setup>
+	onMounted(() => {
+		useGsap.to(".writing-title", {
+			scrollTrigger: {
+				trigger: "#writing",
+				start: "top top",
+				pin: ".writing-title",
+				pinSpacing: false,
+				end: "bottom top+=20%"
+			}
+		});
+
+		useGsap.utils.toArray(".post").forEach((post: HTMLElement) => {
+			useGsap.from(post, {
+				scrollTrigger: {
+					trigger: post,
+					start: "20% bottom"
+				},
+				opacity: 0,
+				duration: 0.5,
+				delay: 0.25
+			});
+		});
+	});
+</script>

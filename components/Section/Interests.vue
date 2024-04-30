@@ -3,7 +3,7 @@
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div grid grid-cols-1 md="grid-cols-12" gap-10>
-					<div border-t-2 border-black md="col-span-4">
+					<div class="interests-col" border-t-2 border-black md="col-span-4">
 						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
 							Interests
 						</p>
@@ -36,6 +36,16 @@
 				amount: 0.25,
 				from: "center",
 				grid: "auto"
+			}
+		});
+
+		useGsap.to(".interests-col", {
+			scrollTrigger: {
+				trigger: "#interests",
+				start: "top top",
+				pin: ".interests-col",
+				pinSpacing: false,
+				end: "bottom top+=20%"
 			}
 		});
 	});

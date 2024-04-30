@@ -16,3 +16,19 @@
 		</div>
 	</section>
 </template>
+
+<script lang="ts" setup>
+	onMounted(() => {
+		useGsap.utils.toArray(".skill").forEach((skill: HTMLElement) => {
+			useGsap.from(skill, {
+				scrollTrigger: {
+					trigger: skill,
+					start: "20% bottom"
+				},
+				opacity: 0,
+				duration: 0.5,
+				delay: 0.25
+			});
+		});
+	});
+</script>

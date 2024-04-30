@@ -1,7 +1,7 @@
 <template>
-	<NuxtLink to="/" flex flex-col gap-6 md="px-8" lg="px-0" class="group">
+	<NuxtLink to="/" flex flex-col gap-6 md="px-8" lg="px-0" class="work group">
 		<div aspect-video overflow-hidden md="rounded-xl">
-			<NuxtImg :src="getPlaceholder(1280, 720)" />
+			<NuxtImg :src="getPlaceholder(1280, 720)" w-full />
 		</div>
 		<div flex flex-col gap-1 px-8 md="px-0">
 			<p class="group-hover:opacity-70" z--1 text-2xl font-medium transition-opacity space-x-2>
