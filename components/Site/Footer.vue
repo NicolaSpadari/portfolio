@@ -1,5 +1,5 @@
 <template>
-	<footer id="footer" bg-lime-50>
+	<footer id="footer" animate-gradient animate-duration="15s" animate-count-infinite>
 		<div py-20 lg="py-30">
 			<div crate>
 				<div flex flex-col gap-12 md="flex-row" lg="gap-32">
@@ -32,6 +32,4 @@
 
 <script lang="ts" setup>
 	const { name, socials, currentYear, email } = useConstants();
-
-	onMounted(() => useGradient("#footer"));
 </script>

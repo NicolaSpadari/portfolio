@@ -1,5 +1,5 @@
 <template>
-	<section id="hero" h="40vh" lg="45vh" bg-lime-50>
+	<section id="hero" h="40vh" lg="45vh" animate-gradient animate-duration="15s" animate-count-infinite>
 		<div crate-boxed h-full>
 			<div grid h-full items-center>
 				<div>
@@ -29,7 +29,5 @@
 			duration: 0.75,
 			ease: "power4.out"
 		});
-
-		useGradient("#hero");
 	});
 </script>

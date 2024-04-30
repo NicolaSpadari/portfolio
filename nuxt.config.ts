@@ -1,5 +1,3 @@
-import AutoImport from "unplugin-auto-import/vite";
-
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -46,17 +44,6 @@ export default defineNuxtConfig({
 	},
 	supabase: {
 		redirect: false
-	},
-	vite: {
-		plugins: [
-			AutoImport({
-				imports: [
-					{
-						"@unocss/preset-mini": ["colors"]
-					}
-				]
-			})
-		]
 	},
 	vue: {
 		compilerOptions: {

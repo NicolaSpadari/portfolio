@@ -36,7 +36,6 @@
 		"nuxt": "^3.11.2",
 		"nuxt-svgo": "^4.0.0",
 		"sass": "^1.75.0",
-		"typescript": "^5.4.5",
-		"unplugin-auto-import": "^0.17.5"
+		"typescript": "^5.4.5"
 	}
 }

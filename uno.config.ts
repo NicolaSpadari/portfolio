@@ -9,6 +9,13 @@ import {
 	transformerDirectives,
 	transformerVariantGroup
 } from "unocss";
+import { colors } from "@unocss/preset-mini";
+
+const lime = typeof colors?.lime === "string" ? colors?.lime : colors?.lime?.[50];
+const cyan = typeof colors?.cyan === "string" ? colors?.cyan : colors?.cyan?.[50];
+const pink = typeof colors?.pink === "string" ? colors?.pink : colors?.pink?.[50];
+const indigo = typeof colors?.indigo === "string" ? colors?.indigo : colors?.indigo?.[50];
+const orange = typeof colors?.orange === "string" ? colors?.orange : colors?.orange?.[50];
 
 export default defineConfig({
 	safelist: ["font-text", "antialiased", "i-carbon-logo-github", "i-carbon-logo-linkedin"],
@@ -46,6 +53,17 @@ export default defineConfig({
 			xl: "1200px",
 			xxl: "1400px",
 			uw: "2000px"
+		},
+		animation: {
+			keyframes: {
+				gradient: `{
+					0%, 100% { background-color: ${lime} }
+					20% { background-color: ${cyan} }
+					40% { background-color: ${pink} }
+					60% { background-color: ${indigo} }
+					80% { background-color: ${orange} }
+				}`
+			}
 		}
 	},
 	transformers: [

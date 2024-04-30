@@ -1,5 +1,5 @@
 <template>
-	<nav id="navbar" sticky top-0 z-5 w-full bg-lime-50 py-5>
+	<nav id="navbar" sticky top-0 z-5 py-5 animate-gradient animate-duration="15s" animate-count-infinite>
 		<div crate>
 			<div class="navbar-content" flex justify-between>
 				<NuxtLink to="#">
@@ -39,8 +39,6 @@
 	const { open } = useMenu();
 
 	onMounted(() => {
-		useGradient("#navbar");
-
 		useGsap.from(".navbar-content", {
 			yPercent: -150,
 			delay: 0.5,
