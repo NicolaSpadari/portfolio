@@ -10,7 +10,7 @@
 					</div>
 					<div md="col-span-7 col-start-6">
 						<div grid grid-cols-2 md="grid-cols-3" lg="grid-cols-4" gap-2>
-							<NuxtImg v-for="i in 12" :key="i" class="cell" :src="genericPlaceholder" aspect-square h-full w-full overflow-hidden rounded-xl />
+							<NuxtImg v-for="interest in interests" :key="interest.id" class="cell" :src="interest.image" :alt="interest.title" aspect-square h-full w-full overflow-hidden rounded-xl />
 						</div>
 					</div>
 				</div>
@@ -20,7 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-	const { genericPlaceholder } = usePlaceholder();
+	const { data: interests } = await useFetch("/api/competences", {
+		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+	});
 
 	onMounted(() => {
 		useGsap.from(".cell", {

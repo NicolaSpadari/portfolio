@@ -37,7 +37,7 @@
 			}
 		});
 
-		useGsap.utils.toArray(".post").forEach((post: HTMLElement) => {
+		document.querySelectorAll(".post").forEach((post) => {
 			useGsap.from(post, {
 				scrollTrigger: {
 					trigger: post,

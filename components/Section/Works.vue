@@ -11,12 +11,7 @@
 
 			<div lg="crate">
 				<div class="works-content" grid grid-cols-1 gap-10 md="grid-cols-2 gap-8">
-					<Work md="col-span-2 px-8" lg="px-0" />
-
-					<Work />
-					<Work />
-					<Work />
-					<Work />
+					<Work v-for="(project, projectIndex) in projects" :key="project.id" :project="project" :class="{ 'md:col-span-2 md:px-8 lg:px-0': projectIndex === 0 }" />
 				</div>
 			</div>
 		</div>
@@ -24,8 +19,12 @@
 </template>
 
 <script lang="ts" setup>
+	const { data: projects } = await useFetch("/api/projects", {
+		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+	});
+
 	onMounted(() => {
-		useGsap.utils.toArray(".work").forEach((work: HTMLElement) => {
+		document.querySelectorAll(".work").forEach((work) => {
 			useGsap.from(work, {
 				scrollTrigger: {
 					trigger: work,

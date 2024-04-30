@@ -1,4 +1,4 @@
-import { colors } from "@unocss/preset-mini";
+// import { colors } from "@unocss/preset-mini";
 
 export const useGradient = (section: string) => {
 	const lime = typeof colors?.lime === "string" ? colors?.lime : colors?.lime?.[50];

@@ -10,7 +10,7 @@
 					</div>
 					<div md="col-start-7 col-span-6">
 						<div flex flex-col divide-y divide-gray-200>
-							<Experience v-for="i in 5" :key="i" />
+							<Experience v-for="experience in experiences" :key="experience.id" :experience="experience" />
 							<Btn class="button" to="/" :icon="true">
 								See full CV
 							</Btn>
@@ -23,6 +23,10 @@
 </template>
 
 <script lang="ts" setup>
+	const { data: experiences } = await useFetch("/api/experiences", {
+		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+	});
+
 	onMounted(() => {
 		useGsap.to(".experience-col", {
 			scrollTrigger: {
@@ -34,7 +38,7 @@
 			}
 		});
 
-		useGsap.utils.toArray(".experience").forEach((experience: HTMLElement) => {
+		document.querySelectorAll(".experience").forEach((experience) => {
 			useGsap.from(experience, {
 				scrollTrigger: {
 					trigger: experience,

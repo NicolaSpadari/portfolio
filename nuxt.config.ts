@@ -5,6 +5,7 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/image",
+		"@nuxtjs/supabase",
 		"@hypernym/nuxt-gsap",
 		"nuxt-svgo"
 	],
@@ -43,9 +44,18 @@ export default defineNuxtConfig({
 			scrollTrigger: true
 		}
 	},
+	supabase: {
+		redirect: false
+	},
 	vite: {
 		plugins: [
-			AutoImport({})
+			AutoImport({
+				imports: [
+					{
+						"@unocss/preset-mini": ["colors"]
+					}
+				]
+			})
 		]
 	},
 	vue: {

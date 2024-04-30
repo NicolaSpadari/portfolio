@@ -9,7 +9,7 @@
 						</p>
 					</div>
 					<div flex flex-col divide-y divide-gray-200>
-						<Skill v-for="i in 5" :key="i" />
+						<Skill v-for="skill in skills" :key="skill.id" :skill="skill" />
 					</div>
 				</div>
 			</div>
@@ -18,8 +18,12 @@
 </template>
 
 <script lang="ts" setup>
+	const { data: skills } = await useFetch("/api/competences", {
+		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+	});
+
 	onMounted(() => {
-		useGsap.utils.toArray(".skill").forEach((skill: HTMLElement) => {
+		document.querySelectorAll(".skill").forEach((skill) => {
 			useGsap.from(skill, {
 				scrollTrigger: {
 					trigger: skill,
