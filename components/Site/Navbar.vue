@@ -1,5 +1,5 @@
 <template>
-	<nav id="navbar" sticky top-0 w-full bg-lime-50 py-5>
+	<nav id="navbar" sticky top-0 z-5 w-full bg-lime-50 py-5>
 		<div crate>
 			<div flex justify-between>
 				<NuxtLink to="#">

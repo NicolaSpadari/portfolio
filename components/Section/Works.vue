@@ -10,7 +10,7 @@
 			</div>
 
 			<div lg="crate">
-				<div grid grid-cols-1 gap-10 md="grid-cols-2 gap-8">
+				<div class="works-content" grid grid-cols-1 gap-10 md="grid-cols-2 gap-8">
 					<Work md="col-span-2 px-8" lg="px-0" />
 
 					<Work />
@@ -22,3 +22,17 @@
 		</div>
 	</section>
 </template>
+
+<script lang="ts" setup>
+	onMounted(() => {
+		useGsap.from(".works-content", {
+			scrollTrigger: {
+				trigger: "#works",
+				start: "20% bottom"
+			},
+			opacity: 0,
+			duration: 0.5,
+			delay: 0.5
+		});
+	});
+</script>
