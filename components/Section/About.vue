@@ -5,13 +5,13 @@
 				<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
 					About
 				</p>
-				<div grid grid-cols-1 gap-10 md="grid-cols-2 gap-48">
-					<div>
+				<div grid grid-cols-1 md="grid-cols-12" gap-10>
+					<div md="col-span-4">
 						<p text-2xl lg="text-[32px]" font-medium>
 							I'm Ben — a freelance digital product designer with 10 years of experience. I care a lot about using design for positive impact. Currently based in Lisbon, Portugal.
 						</p>
 					</div>
-					<div flex flex-col gap-10>
+					<div md="col-start-7 col-span-6" flex flex-col gap-10>
 						<p text-xl lg="text-[22px]">
 							I was most recently working at Portugal's newest unicorn, <NuxtLink to="/" font-medium underline>
 								Cucumber

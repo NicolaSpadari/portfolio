@@ -8,8 +8,8 @@
 				<p lg="text-7xl mt-10" mt-6 text="40px" font-medium>
 					Have a project in mind?
 				</p>
-				<div grid grid-cols-1 gap-10 md="grid-cols-5 gap-48">
-					<div lg="col-span-3">
+				<div grid grid-cols-1 md="grid-cols-12" gap-10>
+					<div md="col-span-7">
 						<div flex flex-col gap-8>
 							<p text-xl lg="text-[22px]">
 								If you want to chat about a project &ndash; send me an email on <NuxtLink :to="`mailto:${email}`" font-medium underline transition-opacity hover="opacity-65">
@@ -24,7 +24,7 @@
 							</p>
 						</div>
 					</div>
-					<div lg="col-span-2" flex flex-col gap-3>
+					<div md="col-span-3 col-start-9" flex flex-col gap-3>
 						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" hover="opacity-65" text-3xl font-medium underline transition-opacity>
 							{{ social.label }}
 						</NuxtLink>
