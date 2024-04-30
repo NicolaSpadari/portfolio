@@ -1,7 +1,7 @@
 <template>
 	<nav id="navbar" sticky top-0 z-5 py-5 animate-gradient animate-duration="15s" animate-count-infinite>
 		<div crate>
-			<div class="navbar-content" flex justify-between>
+			<div class="navbar-content" flex justify-between transform translate-y="-150%">
 				<NuxtLink to="#">
 					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 				</NuxtLink>
@@ -9,7 +9,7 @@
 				<div hidden md="flex gap-10">
 					<div flex items-center gap-10>
 						<NuxtLink v-for="anchor in sections" :key="anchor.id" :to="anchor.hash" text-xl transition-opacity hover="opacity-65">
-							<span class="navbar-section">{{ anchor.label }}</span>
+							<span class="navbar-section" invisible>{{ anchor.label }}</span>
 						</NuxtLink>
 					</div>
 					<div flex items-center gap-8>
@@ -39,15 +39,15 @@
 	const { open } = useMenu();
 
 	onMounted(() => {
-		useGsap.from(".navbar-content", {
-			yPercent: -150,
+		useGsap.to(".navbar-content", {
+			"--un-translate-y": 0,
 			delay: 0.5,
 			duration: 1,
 			ease: "power3.out"
 		});
 
 		useGsap.from(".navbar-section", {
-			opacity: 0,
+			autoAlpha: 0,
 			stagger: 0.1,
 			duration: 0.3,
 			delay: 0.75

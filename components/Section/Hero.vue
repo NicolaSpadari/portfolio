@@ -4,13 +4,13 @@
 			<div grid h-full items-center>
 				<div>
 					<p lg="text-[5rem]" overflow-hidden text-5xl text-dark>
-						<span inline-block class="line">{{ name }} {{ surname }}</span>
+						<span inline-block invisible class="line">{{ name }} {{ surname }}</span>
 					</p>
 					<p lg="text-[5rem]" overflow-hidden text-5xl text-dark>
-						<span inline-block class="line">Frontend web</span>
+						<span inline-block invisible class="line">Frontend web</span>
 					</p>
 					<p lg="text-[5rem]" overflow-hidden text-5xl text-dark>
-						<span inline-block class="line">developer</span>
+						<span inline-block invisible class="line">developer</span>
 					</p>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 
 	onMounted(() => {
 		useGsap.from(".line", {
-			opacity: 0,
+			autoAlpha: 0,
 			yPercent: 100,
 			stagger: 0.15,
 			duration: 0.75,
