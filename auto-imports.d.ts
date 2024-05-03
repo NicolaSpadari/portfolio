@@ -6,4 +6,5 @@
 export {}
 declare global {
   const colors: typeof import('@unocss/preset-mini')['colors']
+  const format: typeof import('date-fns')['format']
 }

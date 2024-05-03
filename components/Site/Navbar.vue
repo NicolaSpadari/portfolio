@@ -1,7 +1,7 @@
 <template>
-	<nav id="navbar" sticky top-0 z-5 py-5 animate-gradient animate-duration="15s" animate-count-infinite>
+	<nav id="navbar" gradient sticky top-0 z-5 py-5>
 		<div crate>
-			<div class="navbar-content" flex justify-between transform translate-y="-150%">
+			<div class="navbar-content" flex transform justify-between translate-y="-150%">
 				<NuxtLink to="#">
 					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 				</NuxtLink>

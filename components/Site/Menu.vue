@@ -1,6 +1,6 @@
 <template>
 	<Transition name="fade">
-		<div v-show="open" id="menu" md="hidden" absolute z-5 crate w-full h-screen animate-gradient animate-duration="15s" animate-count-infinite>
+		<div v-show="open" id="menu" md="hidden" absolute z-5 crate w-full h-screen gradient>
 			<div py-10 space-y-3>
 				<div flex flex-col>
 					<NuxtLink v-for="section in sections" :key="section.id" :to="section.hash" py-3 text-lg>

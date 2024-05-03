@@ -3,7 +3,7 @@
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div grid grid-cols-1 md="grid-cols-12" gap-10>
-					<div class="experience-col" border-t-2 border-black md="col-span-4">
+					<div class="experience-col" md="col-span-4" pointer-events-none border-t-2 border-black>
 						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
 							Experience
 						</p>
@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 	const { data: experiences } = await useFetch("/api/experiences", {
-		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+		headers: useRequestHeaders(["cookie"])
 	});
 
 	const { upToDesktop } = useConstants();

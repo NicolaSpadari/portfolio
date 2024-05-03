@@ -1,5 +1,5 @@
 <template>
-	<section id="hero" h="40vh" lg="45vh" animate-gradient animate-duration="15s" animate-count-infinite>
+	<section id="hero" h="40vh" lg="45vh" gradient>
 		<div crate-boxed h-full>
 			<div grid h-full items-center>
 				<div>

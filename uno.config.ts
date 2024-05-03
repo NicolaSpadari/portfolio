@@ -23,7 +23,7 @@ export default defineConfig({
 		["crate", "mx-auto max-w-7xl px-10"],
 		["crate-boxed", "mx-auto max-w-3xl px-10"],
 		["flex-center", "flex justify-center items-center"],
-		["size-full", "w-full h-full"]
+		["gradient", "animate-gradient animate-duration-[15s] animate-count-infinite"]
 	],
 	presets: [
 		presetUno(),

@@ -6,7 +6,7 @@
 					About
 				</p>
 				<div grid grid-cols-1 md="grid-cols-12" gap-10>
-					<div class="about-text" md="col-span-4">
+					<div class="about-text" md="col-span-4" pointer-events-none>
 						<p text-2xl lg="text-[32px]" font-medium>
 							I'm Ben — a freelance digital product designer with 10 years of experience. I care a lot about using design for positive impact. Currently based in Lisbon, Portugal.
 						</p>

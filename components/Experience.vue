@@ -10,7 +10,7 @@
 		</div>
 		<div flex items-center gap-2>
 			<span text-xl>
-				{{ props.experience.date }}
+				{{ format(props.experience.date, "MMM yyyy") }}
 
 				<template v-if="props.experience.current">
 					- today
@@ -21,6 +21,8 @@
 </template>
 
 <script lang="ts" setup>
+	import { format } from "date-fns";
+
 	const props = defineProps<{
 		experience: Experience
 	}>();

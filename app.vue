@@ -6,7 +6,7 @@
 
 		<SectionIntro />
 
-		<SectionWorks />
+		<!-- <SectionWorks /> -->
 
 		<SectionWriting />
 
@@ -14,7 +14,7 @@
 
 		<SectionExperiences />
 
-		<SectionSkills />
+		<SectionProjects />
 
 		<SectionInterests />
 
@@ -35,9 +35,6 @@
 	-webkit-tap-highlight-color: transparent;
 	scroll-behavior: smooth;
 	@apply min-h-screen;
-}
-body {
-	// @apply overflow-x-hidden;
 }
 img {
 	-webkit-user-drag: none;

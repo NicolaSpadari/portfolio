@@ -6,9 +6,9 @@ export const useConstants = () => {
 
 	const sections = [
 		{
-			label: "Work",
-			id: "work",
-			hash: "#work"
+			label: "Projects",
+			id: "projects",
+			hash: "#projects"
 		},
 		{
 			label: "Writing",

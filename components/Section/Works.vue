@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 	const { data: projects } = await useFetch("/api/projects", {
-		headers: useRequestHeaders(["cookie"]) as Record<string, string>
+		headers: useRequestHeaders(["cookie"])
 	});
 
 	onMounted(() => {
