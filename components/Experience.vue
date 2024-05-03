@@ -12,7 +12,11 @@
 			<span text-xl>
 				{{ format(props.experience.date, "MMM yyyy") }}
 
-				<template v-if="props.experience.current">
+				<template v-if="props.experience.date_to">
+					- {{ format(props.experience.date_to, "MMM yyyy") }}
+				</template>
+
+				<template v-else-if="props.experience.current">
 					- today
 				</template>
 			</span>

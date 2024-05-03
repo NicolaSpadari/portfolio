@@ -11,6 +11,8 @@ declare interface Experience {
 	name: string
 	details: string[]
 	date: string
+	date_to?: string
+	order: number
 	current: boolean
 }
 

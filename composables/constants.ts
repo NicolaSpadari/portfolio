@@ -3,6 +3,9 @@ export const useConstants = () => {
 	const surname = "Spadari";
 	const email = "spadari.nicola@gmail.com";
 	const currentYear = new Date().getFullYear();
+	const companyWebsite = "https://bitbull.it";
+	const prevCompanyWebsite = "https://bitbull.it";
+	const experienceYears = currentYear - 2018;
 
 	const sections = [
 		{
@@ -51,6 +54,9 @@ export const useConstants = () => {
 		currentYear,
 		sections,
 		socials,
-		upToDesktop
+		upToDesktop,
+		companyWebsite,
+		prevCompanyWebsite,
+		experienceYears
 	};
 };
