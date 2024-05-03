@@ -12,7 +12,7 @@
 						</p>
 					</div>
 					<div md="col-start-7 col-span-6" flex flex-col gap-10>
-						<p class="about-desc" text-xl lg="text-[22px]">
+						<p class="about-desc" invisible text-xl lg="text-[22px]">
 							I was most recently working at Portugal's newest unicorn, <NuxtLink to="/" font-medium underline>
 								Cucumber
 							</NuxtLink>. They raised the biggest Series D Portugal has seen. Before that I worked for <NuxtLink to="/" font-medium underline>
@@ -20,7 +20,7 @@
 							</NuxtLink>
 							&ndash; the fastest growing bank in Portugal. I led product design for over 8 million customers. I worked across multiple product squads solving complex money problems.
 						</p>
-						<p class="about-desc" text-xl lg="text-[22px]">
+						<p class="about-desc" invisible text-xl lg="text-[22px]">
 							I was most recently working at Portugal's newest unicorn, <NuxtLink to="/" font-medium underline>
 								Cucumber
 							</NuxtLink>. They raised the biggest Series D Portugal has seen. Before that I worked for <NuxtLink to="/" font-medium underline>
@@ -28,7 +28,7 @@
 							</NuxtLink>
 							&ndash; the fastest growing bank in Portugal. I led product design for over 8 million customers. I worked across multiple product squads solving complex money problems.
 						</p>
-						<p class="about-desc" text-xl lg="text-[22px]">
+						<p class="about-desc" invisible text-xl lg="text-[22px]">
 							I was most recently working at Portugal's newest unicorn, <NuxtLink to="/" font-medium underline>
 								Cucumber
 							</NuxtLink>. They raised the biggest Series D Portugal has seen. Before that I worked for <NuxtLink to="/" font-medium underline>
@@ -73,7 +73,7 @@
 				trigger: "#about",
 				start: "40% bottom"
 			},
-			opacity: 0,
+			autoAlpha: 0,
 			duration: 0.75,
 			delay: 1,
 			stagger: 0.25

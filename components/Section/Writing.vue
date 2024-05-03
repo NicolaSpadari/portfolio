@@ -47,7 +47,7 @@
 					trigger: post,
 					start: "20% bottom"
 				},
-				opacity: 0,
+				autoAlpha: 0,
 				duration: 0.5,
 				delay: 0.25
 			});

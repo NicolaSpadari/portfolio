@@ -22,6 +22,7 @@
 								{{ social.label }}
 							</NuxtLink>
 							<span text-base text-neutral-500>&copy; {{ currentYear }}</span>
+							<span text-base text-neutral-500 opacity-1>Have you found the easter egg?</span>
 						</div>
 					</div>
 				</div>

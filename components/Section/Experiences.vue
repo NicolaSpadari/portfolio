@@ -11,7 +11,7 @@
 					<div md="col-start-7 col-span-6">
 						<div flex flex-col divide-y divide-gray-200>
 							<Experience v-for="experience in experiences" :key="experience.id" :experience="experience" />
-							<Btn class="button" to="/" :icon="true">
+							<Btn class="button" to="/" :icon="true" invisible>
 								See full CV
 							</Btn>
 						</div>
@@ -48,7 +48,7 @@
 					trigger: experience,
 					start: "20% bottom"
 				},
-				opacity: 0,
+				autoAlpha: 0,
 				duration: 0.5,
 				delay: 0.25
 			});
@@ -59,7 +59,7 @@
 				trigger: ".button",
 				start: "20% bottom"
 			},
-			opacity: 0,
+			autoAlpha: 0,
 			yPercent: 30,
 			duration: 0.5,
 			delay: 0.5

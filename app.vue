@@ -16,7 +16,7 @@
 
 		<SectionProjects />
 
-		<SectionInterests />
+		<SectionSkills />
 
 		<SectionTouch />
 
