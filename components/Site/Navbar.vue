@@ -1,5 +1,5 @@
 <template>
-	<nav id="navbar" gradient sticky top-0 z-5 py-5>
+	<nav id="navbar" fixed inset-x-0 w-full md="sticky" top-0 z-5 gradient overflow-hidden py-5>
 		<div crate>
 			<div class="navbar-content" flex transform justify-between translate-y="-150%">
 				<NuxtLink to="#">
@@ -20,16 +20,16 @@
 				</div>
 
 				<div flex items-center md="hidden">
-					<button type="button" @click="open = !open">
+					<button type="button" @click="handleMenu()">
 						<i-heroicons-solid-x-mark v-if="open" h-6 w-6 />
 						<i-heroicons-solid-bars-2 v-else h-6 w-6 />
 					</button>
 				</div>
 			</div>
-		</div>
 
-		<div relative>
-			<SiteMenu />
+			<div relative>
+				<SiteMenu />
+			</div>
 		</div>
 	</nav>
 </template>
@@ -37,6 +37,11 @@
 <script lang="ts" setup>
 	const { sections, socials } = useConstants();
 	const { open } = useMenu();
+
+	const tl = useGsap.timeline({
+		reversed: true,
+		paused: true
+	});
 
 	onMounted(() => {
 		useGsap.to(".navbar-content", {
@@ -52,5 +57,16 @@
 			duration: 0.3,
 			delay: 0.75
 		});
+
+		tl.to("#navbar", {
+			height: "100vh",
+			duration: 0.75,
+			ease: "power4.inOut"
+		});
 	});
+
+	const handleMenu = () => {
+		open.value = !open.value;
+		tl.reversed() ? tl.play() : tl.reverse();
+	};
 </script>
