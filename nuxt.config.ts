@@ -48,6 +48,9 @@ export default defineNuxtConfig({
 	storyblok: {
 		accessToken: process.env.STORYBLOK_ACCESS_TOKEN
 	},
+	image: {
+		provider: "ipx"
+	},
 	vite: {
 		plugins: [
 			AutoImport({
