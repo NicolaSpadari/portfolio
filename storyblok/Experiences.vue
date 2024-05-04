@@ -10,8 +10,8 @@
 					</div>
 					<div md="col-start-7 col-span-6">
 						<div flex flex-col divide-y divide-gray-200>
-							<Experience v-for="experience in experiences" :key="experience.id" :experience="experience" />
-							<Btn class="button" to="/" :icon="true" invisible>
+							<Experience v-for="experience in props.blok.content" :key="experience._uid" :experience="experience" />
+							<Btn v-if="props.blok.attachment.filename" class="button" :to="props.blok.attachment.filename" :icon="true" invisible>
 								See full CV
 							</Btn>
 						</div>
@@ -23,9 +23,9 @@
 </template>
 
 <script lang="ts" setup>
-	const { data: experiences } = await useFetch("/api/experiences", {
-		headers: useRequestHeaders(["cookie"])
-	});
+	const props = defineProps<{
+		blok: ExperiencesStoryblok
+	}>();
 
 	const { upToDesktop } = useConstants();
 

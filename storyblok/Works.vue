@@ -5,11 +5,11 @@
 				<div flex flex-col gap-10 md="gap-8">
 					<div border-t-2 border-black md="col-span-2">
 						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
-							Projects
+							{{ props.blok.title }}
 						</p>
 					</div>
 					<div flex flex-col divide-y divide-gray-200>
-						<Project v-for="project in projects" :key="project.id" :project="project" />
+						<Project v-for="project in props.blok.content" :key="project._uid" :project="project" />
 					</div>
 				</div>
 			</div>
@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts" setup>
-	const { data: projects } = await useFetch("/api/projects", {
-		headers: useRequestHeaders(["cookie"])
-	});
+	const props = defineProps<{
+		blok: WorksStoryblok
+	}>();
 
 	onMounted(() => {
 		document.querySelectorAll(".project").forEach((project) => {

@@ -16,27 +16,31 @@
 		"preview": "nuxt preview",
 		"preinstall": "npx only-allow pnpm",
 		"postinstall": "nuxt prepare",
+		"proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+		"sb-pull-comps": "storyblok pull-components --space 287469",
+		"sb-gen-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./components.287469.json --destinationFilePath ./types/global.d.ts",
+		"sb-types": "nr sb-pull-comps && nr sb-gen-types",
 		"lint": "eslint . --fix"
 	},
 	"dependencies": {
 		"@iconify-json/carbon": "^1.1.32",
-		"@nuxt/image": "^1.6.0"
+		"@nuxt/image": "^1.7.0",
+		"@storyblok/nuxt": "^6.0.10"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^2.16.0",
+		"@antfu/eslint-config": "^2.16.1",
 		"@hypernym/nuxt-gsap": "^2.4.2",
 		"@iconify-json/heroicons-solid": "^1.1.11",
-		"@nuxtjs/supabase": "^1.2.1",
 		"@unocss/eslint-plugin": "^0.59.4",
 		"@unocss/nuxt": "^0.59.4",
 		"@vueuse/core": "^10.9.0",
 		"@vueuse/nuxt": "^10.9.0",
-		"date-fns": "^3.6.0",
 		"eslint": "8.57.0",
-		"eslint-plugin-format": "^0.1.1",
 		"nuxt": "^3.11.2",
 		"nuxt-svgo": "^4.0.0",
-		"sass": "^1.75.0",
-		"typescript": "^5.4.5"
+		"nuxt3-date-fns": "^0.2.0",
+		"sass": "^1.76.0",
+		"typescript": "^5.4.5",
+		"unplugin-auto-import": "^0.17.5"
 	}
 }

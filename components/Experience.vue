@@ -3,17 +3,15 @@
 		<div flex flex-col>
 			<span font-medium text="28px">{{ props.experience.name }}</span>
 			<span block text-lg>
-				<template v-for="text in props.experience.details">
-					{{ text }}
-				</template>
+				{{ props.experience.text }}
 			</span>
 		</div>
 		<div flex items-center gap-2>
 			<span text-xl>
-				{{ format(props.experience.date, "MMM yyyy") }}
+				{{ useFormat(props.experience.from, "MMM yyyy") }}
 
-				<template v-if="props.experience.date_to">
-					- {{ format(props.experience.date_to, "MMM yyyy") }}
+				<template v-if="props.experience.to">
+					- {{ useFormat(props.experience.to, "MMM yyyy") }}
 				</template>
 
 				<template v-else-if="props.experience.current">
@@ -25,9 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { format } from "date-fns";
-
 	const props = defineProps<{
-		experience: Experience
+		experience: ExperienceStoryblok
 	}>();
 </script>

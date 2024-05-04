@@ -1,14 +1,13 @@
 <template>
 	<section id="photo" max-h="570px" overflow-hidden>
-		<NuxtImg :src="getPlaceholder(1920, 1080)" class="image" size-full object-cover :alt="fullName" />
+		<NuxtImg :src="props.blok.image.filename" class="image" size-full object-cover :alt="props.blok.image.alt" />
 	</section>
 </template>
 
 <script lang="ts" setup>
-	const { getPlaceholder } = usePlaceholder();
-	const { name, surname } = useConstants();
-
-	const fullName = computed(() => `${name} ${surname}`);
+	const props = defineProps<{
+		blok: PhotoStoryblok
+	}>();
 
 	onMounted(() => {
 		useGsap.to(".image", {

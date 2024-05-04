@@ -1,15 +1,18 @@
+import AutoImport from "unplugin-auto-import/vite";
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/image",
-		"@nuxtjs/supabase",
+		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
+		"nuxt3-date-fns",
 		"nuxt-svgo"
 	],
 	app: {
 		head: {
-			title: "Curriculum Vitae",
+			title: "Nicola Spadari",
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
@@ -42,8 +45,26 @@ export default defineNuxtConfig({
 			scrollTrigger: true
 		}
 	},
-	supabase: {
-		redirect: false
+	storyblok: {
+		accessToken: process.env.STORYBLOK_ACCESS_TOKEN
+	},
+	vite: {
+		plugins: [
+			AutoImport({
+				imports: [
+					{
+						from: "@storyblok/nuxt",
+						imports: ["SbBlokData"],
+						type: true
+					},
+					{
+						from: "@storyblok/vue",
+						imports: ["ISbRichtext"],
+						type: true
+					}
+				]
+			})
+		]
 	},
 	vue: {
 		compilerOptions: {

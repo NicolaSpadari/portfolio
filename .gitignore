@@ -1,9 +1,11 @@
 node_modules
 .DS_Store
 *.log*
+*.pem
 .nuxt
 .nitro
 .cache
 .output
 .env
 dist
+components.*.json
