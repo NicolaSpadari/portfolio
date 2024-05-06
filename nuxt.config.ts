@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
+		"@nuxt/content",
 		"nuxt3-date-fns",
 		"nuxt-svgo"
 	],
