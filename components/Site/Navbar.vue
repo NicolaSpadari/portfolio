@@ -1,5 +1,5 @@
 <template>
-	<nav id="navbar" fixed inset-x-0 w-full md="sticky" top-0 z-5 gradient overflow-hidden py-5>
+	<nav id="navbar" md="sticky" fixed inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-5>
 		<div crate>
 			<div class="navbar-content" flex transform justify-between translate-y="-150%">
 				<NuxtLink to="#">
@@ -8,8 +8,8 @@
 
 				<div hidden md="flex gap-10">
 					<div flex items-center gap-10>
-						<NuxtLink v-for="anchor in sections" :key="anchor.id" :to="anchor.hash" text-xl transition-opacity hover="opacity-65">
-							<span class="navbar-section" invisible>{{ anchor.label }}</span>
+						<NuxtLink v-for="anchor in props.sections" :key="anchor._uid" :to="`#${anchor.component}`" text-xl transition-opacity hover="opacity-65">
+							<span class="navbar-section" invisible>{{ anchor.title }}</span>
 						</NuxtLink>
 					</div>
 					<div flex items-center gap-8>
@@ -35,7 +35,11 @@
 </template>
 
 <script lang="ts" setup>
-	const { sections, socials } = useConstants();
+	const props = defineProps<{
+		sections: SbBlokData[]
+	}>();
+
+	const { socials } = useConstants();
 	const { open } = useMenu();
 
 	const tl = useGsap.timeline({

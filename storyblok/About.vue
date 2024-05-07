@@ -1,5 +1,5 @@
 <template>
-	<section id="about" border-t border-gray-200>
+	<section id="about" :class="{ linkable: props.blok.linkable }" border-t border-gray-200>
 		<div crate py="90px" lg="py-30">
 			<div flex flex-col gap-10 border-t-2 border-black lg="gap-20">
 				<p class="about-title" lg="text-[52px] mt-10" mt-6 text-4xl font-medium>

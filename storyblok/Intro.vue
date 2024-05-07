@@ -1,5 +1,5 @@
 <template>
-	<section id="intro">
+	<section id="intro" :class="{ linkable: props.blok.linkable }">
 		<div crate-boxed>
 			<div class="intro-content" lg="space-y-8 py-30" invisible py-20 space-y-6>
 				<div v-for="paragraph in props.blok.text" :key="paragraph._uid" text-2xl lg="text-3xl" v-html="useRichText(paragraph.text!)" />

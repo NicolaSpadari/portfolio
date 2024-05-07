@@ -2,6 +2,7 @@ declare interface AboutStoryblok {
 	title: string
 	text: string
 	content?: AboutParagraphStoryblok[]
+	linkable?: boolean
 	component: "about"
 	_uid: string
 	[k: string]: any
@@ -49,6 +50,7 @@ declare interface ExperiencesStoryblok {
 	title?: string
 	content?: ExperienceStoryblok[]
 	attachment: AssetStoryblok
+	linkable?: boolean
 	component: "experiences"
 	_uid: string
 	[k: string]: any
@@ -122,6 +124,7 @@ declare interface SkillStoryblok {
 declare interface SkillsStoryblok {
 	title: string
 	content?: SkillStoryblok[]
+	linkable?: boolean
 	component: "skills"
 	_uid: string
 	[k: string]: any
@@ -191,6 +194,7 @@ declare interface WorkStoryblok {
 declare interface WorksStoryblok {
 	title: string
 	content?: WorkStoryblok[]
+	linkable?: boolean
 	component: "works"
 	_uid: string
 	[k: string]: any

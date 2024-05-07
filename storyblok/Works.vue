@@ -1,5 +1,5 @@
 <template>
-	<section id="projects" border-t border-gray-200>
+	<section id="projects" :class="{ linkable: props.blok.linkable }" border-t border-gray-200>
 		<div py="90px" lg="py-30 space-y-16" space-y-10>
 			<div crate>
 				<div flex flex-col gap-10 md="gap-8">
