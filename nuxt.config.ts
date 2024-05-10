@@ -7,7 +7,9 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
+		"@nuxtjs/fontaine",
 		"nuxt3-date-fns",
+		"nuxt-security",
 		"nuxt-svgo"
 	],
 	app: {
@@ -28,6 +30,45 @@ export default defineNuxtConfig({
 			noscript: [
 				{ children: "JavaScript is required to run this project" }
 			]
+		}
+	},
+	security: {
+		headers: {
+			crossOriginEmbedderPolicy: "unsafe-none",
+			contentSecurityPolicy: {
+				"default-src": ["'self'", "*.storyblok.com"],
+				"style-src": [
+					"'self'",
+					"'unsafe-inline'",
+					"*.storyblok.com"
+				],
+				"script-src": [
+					"'self'",
+					"'unsafe-inline'",
+					"'unsafe-eval'",
+					"*.storyblok.com",
+					"*.netlify.app"
+				],
+				"script-src-attr": [
+					"'self'",
+					"'unsafe-inline'",
+					"'unsafe-eval'",
+					"*.storyblok.com",
+					"*.netlify.app"
+				],
+				"connect-src": [
+					"'self'",
+					"*.storyblok.com"
+				],
+				"img-src": [
+					"'self'",
+					"data:",
+					"*.storyblok.com"
+				],
+				"base-uri": ["'self'"],
+				"frame-src": ["'self'", "*.netlify.com"],
+				"frame-ancestors": ["'self'", "*.storyblok.com"]
+			}
 		}
 	},
 	experimental: {
