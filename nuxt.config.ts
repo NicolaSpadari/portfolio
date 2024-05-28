@@ -21,6 +21,9 @@ export default defineNuxtConfig({
 				{ name: "theme-color", content: "#ffffff" },
 				{ name: "format-detection", content: "no" }
 			],
+			htmlAttrs: {
+				lang: "en"
+			},
 			bodyAttrs: {
 				class: ["font-text", "antialiased"]
 			},
