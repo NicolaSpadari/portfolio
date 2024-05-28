@@ -19,7 +19,8 @@ export default defineNuxtConfig({
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
 				{ name: "theme-color", content: "#ffffff" },
-				{ name: "format-detection", content: "no" }
+				{ name: "format-detection", content: "no" },
+				{ name: "description", content: "Welcome to my personal portfolio" }
 			],
 			htmlAttrs: {
 				lang: "en"
