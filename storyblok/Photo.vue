@@ -1,6 +1,6 @@
 <template>
 	<section id="photo" max-h="570px" overflow-hidden>
-		<NuxtImg :src="props.blok.image.filename" class="image" size-full object-cover :alt="props.blok.image.alt" />
+		<NuxtImg :src="props.blok.image.filename" class="image" size-full object-cover loading="lazy" :alt="props.blok.image.alt" />
 	</section>
 </template>
 

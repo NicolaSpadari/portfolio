@@ -11,7 +11,7 @@
 					<div md="col-span-7 col-start-6">
 						<div grid grid-cols-2 md="grid-cols-3" lg="grid-cols-4" gap-2>
 							<div v-for="(skill, skillIndex) in props.blok.content" :key="skill._uid" class="group cell" :style="`animation-delay: ${100 * skillIndex}ms`" invisible relative aspect-square h-full w-full flex-center gradient overflow-hidden rounded-xl>
-								<NuxtImg class="group-hover:opacity-0" :src="skill.image.filename" :alt="skill.name" size-15 transition-opacity duration-250 />
+								<NuxtImg class="group-hover:opacity-0" :src="skill.image.filename" loading="lazy" :alt="skill.name" size-15 transition-opacity duration-250 />
 
 								<div pointer-events-none absolute inset-0 size-full flex-center opacity-0 transition-opacity duration-250 class="group-hover:opacity-100">
 									<p text-xl md="text-base" xl="text-2xl" font-medium>
