@@ -28,7 +28,7 @@
 			</div>
 
 			<div relative>
-				<SiteMenu />
+				<SiteMenu :sections="props.sections" />
 			</div>
 		</div>
 	</nav>

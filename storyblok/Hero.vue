@@ -1,5 +1,5 @@
 <template>
-	<section id="hero" :class="{ linkable: props.blok.linkable }" h="40vh" lg="45vh" gradient>
+	<section id="hero" :class="{ linkable: props.blok.linkable }" h="65vh" lg="55vh" class="[@media(max-height:992px)]:h-65vh" gradient>
 		<div crate-boxed h-full>
 			<div grid h-full items-center>
 				<div>

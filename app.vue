@@ -1,33 +1,57 @@
 <template>
-	<Body :class="{ 'overflow-y-hidden': open }">
-		<SiteNavbar :sections="sections" />
+	<Html min-h-screen>
+		<Body :class="{ 'overflow-y-hidden': open }">
+			<Lenis ref="lenis" :auto-raf="false" :options="lenisOptions" root>
+				<SiteNavbar :sections="sections" />
 
-		<div v-if="page.content" v-editable="page.content" class="sb-content">
-			<StoryblokComponent v-for="story in page.content.body" :key="story._uid" :blok="story" />
-		</div>
+				<div v-if="page.content" v-editable="page.content" class="sb-content">
+					<StoryblokComponent v-for="story in page.content.body" :key="story._uid" :blok="story" />
+				</div>
 
-		<SiteFooter />
-	</Body>
+				<SiteFooter />
+			</Lenis>
+		</Body>
+	</Html>
 </template>
 
 <script lang="ts" setup>
 	const { open } = useMenu();
 	const sections = ref<SbBlokData[]>([]);
+	const lenis = ref<any>(null);
 
 	const page = await useAsyncStoryblok("home", {
 		version: "draft"
 	}) as Ref<SbBlokData>;
 
 	sections.value.push(...page.value.content?.body.filter((story: SbBlokData) => story.linkable));
+
+	const lenisOptions = {
+		lerp: 0.1,
+		wheelMultiplier: 1,
+		gestureOrientation: "vertical",
+		normalizeWheel: false,
+		smoothTouch: false
+	};
+
+	const onFrame = (time: number) => {
+		lenis.value.instance.raf(time * 1000);
+	};
+
+	onMounted(() => {
+		useGsap.ticker.add(onFrame);
+	});
+
+	onBeforeUnmount(() => {
+		useGsap.ticker.remove(onFrame);
+	});
 </script>
 
 <style lang="scss">
-html {
-	-webkit-tap-highlight-color: transparent;
-	@apply min-h-screen scroll-smooth;
-}
-img {
-	-webkit-user-drag: none;
-	@apply select-none;
-}
+	html {
+		-webkit-tap-highlight-color: transparent;
+	}
+	img {
+		-webkit-user-drag: none;
+		@apply select-none;
+	}
 </style>

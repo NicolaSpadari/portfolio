@@ -54,10 +54,10 @@
 			},
 			autoAlpha: 0,
 			scale: 0.75,
-			duration: 0.75,
-			delay: 0.5,
+			duration: 1,
+			delay: 0.75,
 			stagger: {
-				amount: 0.25,
+				amount: 0.5,
 				from: "start",
 				grid: "auto"
 			}

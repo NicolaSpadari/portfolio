@@ -1,8 +1,8 @@
 <template>
 	<div absolute py-10 space-y-3>
 		<div flex flex-col>
-			<NuxtLink v-for="section in sections" :key="section.id" :to="section.hash" py-3 text-lg>
-				{{ section.label }}
+			<NuxtLink v-for="anchor in props.sections" :key="anchor._uid" :to="`#${anchor.component}`" py-3 text-lg>
+				{{ anchor.title }}
 			</NuxtLink>
 		</div>
 		<div flex gap-8>
@@ -14,5 +14,9 @@
 </template>
 
 <script lang="ts" setup>
-	const { sections, socials } = useConstants();
+	const props = defineProps<{
+		sections: SbBlokData[]
+	}>();
+
+	const { socials } = useConstants();
 </script>

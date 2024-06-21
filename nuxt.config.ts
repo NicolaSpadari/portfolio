@@ -1,14 +1,14 @@
-import AutoImport from "unplugin-auto-import/vite";
-
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/image",
+		"@nuxt/eslint",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
 		"@nuxtjs/fontaine",
 		"nuxt3-date-fns",
+		"nuxt3-lenis",
 		"nuxt-security",
 		"nuxt-svgo"
 	],
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: "theme-color", content: "#ffffff" },
 				{ name: "format-detection", content: "no" },
-				{ name: "description", content: "Welcome to my personal portfolio" }
+				{ name: "description", content: "My personal portfolio" }
 			],
 			htmlAttrs: {
 				lang: "en"
@@ -96,22 +96,18 @@ export default defineNuxtConfig({
 	image: {
 		provider: "ipx"
 	},
-	vite: {
-		plugins: [
-			AutoImport({
-				imports: [
-					{
-						from: "@storyblok/nuxt",
-						imports: ["SbBlokData"],
-						type: true
-					},
-					{
-						from: "@storyblok/vue",
-						imports: ["ISbRichtext"],
-						type: true
-					}
-				]
-			})
+	imports: {
+		presets: [
+			{
+				from: "@storyblok/nuxt",
+				imports: ["SbBlokData"],
+				type: true
+			},
+			{
+				from: "@storyblok/vue",
+				imports: ["ISbRichtext"],
+				type: true
+			}
 		]
 	},
 	vue: {
@@ -123,9 +119,5 @@ export default defineNuxtConfig({
 		prerender: {
 			routes: ["/"]
 		}
-	},
-	sourcemap: {
-		server: true,
-		client: false
 	}
 });

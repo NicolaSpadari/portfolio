@@ -2,43 +2,22 @@ export const useConstants = () => {
 	const name = "Nicola";
 	const surname = "Spadari";
 	const email = "spadari.nicola@gmail.com";
+	const github = "https://github.com/NicolaSpadari";
+	const linkedin = "https://linkedin.com/in/nicolaspadari";
 	const currentYear = new Date().getFullYear();
-
-	const sections = [
-		{
-			label: "Projects",
-			id: "projects",
-			hash: "#projects"
-		},
-		{
-			label: "Writing",
-			id: "writing",
-			hash: "#writing"
-		},
-		{
-			label: "About",
-			id: "about",
-			hash: "#about"
-		},
-		{
-			label: "Contact",
-			id: "contact",
-			hash: "#contact"
-		}
-	];
 
 	const socials = [
 		{
 			icon: "i-carbon-logo-github",
 			id: "github",
 			label: "GitHub",
-			link: "https://github.com/NicolaSpadari"
+			link: github
 		},
 		{
 			icon: "i-carbon-logo-linkedin",
 			id: "linkedin",
 			label: "LinkedIn",
-			link: "https://linkedin.com/in/nicolaspadari"
+			link: linkedin
 		}
 	];
 
@@ -48,8 +27,9 @@ export const useConstants = () => {
 		name,
 		surname,
 		email,
+		github,
+		linkedin,
 		currentYear,
-		sections,
 		socials,
 		upToDesktop
 	};
