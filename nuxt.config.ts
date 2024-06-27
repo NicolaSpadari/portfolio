@@ -114,10 +114,5 @@ export default defineNuxtConfig({
 		compilerOptions: {
 			isCustomElement: (tag: string) => tag.startsWith("i-")
 		}
-	},
-	nitro: {
-		prerender: {
-			routes: ["/"]
-		}
 	}
 });
