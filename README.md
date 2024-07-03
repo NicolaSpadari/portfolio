@@ -16,13 +16,13 @@ https://nicolaspadari.dev
 
 ## Tech stack
 
-- **Core**: Nuxt 3
-- **Styling**: UnoCSS
-- **CMS**: Storyblok
-- **Animations**: Gsap
-- **Smooth scroll**: Lenis
+- **Core**: [Nuxt 3](https://nuxt.com)
+- **Styling**: [UnoCSS](https://unocss.dev)
+- **CMS**: [Storyblok](https://storyblok.com)
+- **Animations**: [Gsap](https://gsap.com)
+- **Smooth scroll**: [Lenis](https://lenis.darkroom.engineering)
 - **Optimization**:
-	- Fontaine
-	- Nuxt Image
-	- Nuxt Icon
-	- Nuxt security
+	- [Fontaine](https://github.com/unjs/fontaine)
+	- [Nuxt Image](https://image.nuxt.com)
+	- [Nuxt Icon](https://github.com/nuxt/icon)
+	- [Nuxt security](https://nuxt-security.vercel.app)
