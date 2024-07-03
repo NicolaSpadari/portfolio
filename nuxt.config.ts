@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/image",
+		"@nuxt/icon",
 		"@nuxt/eslint",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
@@ -24,9 +25,6 @@ export default defineNuxtConfig({
 			],
 			htmlAttrs: {
 				lang: "en"
-			},
-			bodyAttrs: {
-				class: ["font-text", "antialiased"]
 			},
 			link: [
 				{ rel: "shortcut-icon", href: "/favicon.svg" }
@@ -87,7 +85,8 @@ export default defineNuxtConfig({
 	gsap: {
 		composables: true,
 		extraPlugins: {
-			scrollTrigger: true
+			scrollTrigger: true,
+			scrollTo: true
 		}
 	},
 	storyblok: {
@@ -95,6 +94,9 @@ export default defineNuxtConfig({
 	},
 	image: {
 		provider: "ipx"
+	},
+	icon: {
+		mode: "svg"
 	},
 	imports: {
 		presets: [
@@ -109,10 +111,5 @@ export default defineNuxtConfig({
 				type: true
 			}
 		]
-	},
-	vue: {
-		compilerOptions: {
-			isCustomElement: (tag: string) => tag.startsWith("i-")
-		}
 	}
 });

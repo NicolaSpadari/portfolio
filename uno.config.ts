@@ -1,7 +1,6 @@
 import {
 	defineConfig,
 	presetAttributify,
-	presetIcons,
 	presetTagify,
 	presetTypography,
 	presetUno,
@@ -18,7 +17,6 @@ const indigo = typeof colors?.indigo === "string" ? colors?.indigo : colors?.ind
 const orange = typeof colors?.orange === "string" ? colors?.orange : colors?.orange?.[50];
 
 export default defineConfig({
-	safelist: ["font-text", "antialiased", "i-carbon-logo-github", "i-carbon-logo-linkedin"],
 	shortcuts: [
 		["crate", "mx-auto max-w-7xl px-10"],
 		["crate-boxed", "mx-auto max-w-3xl px-10"],
@@ -29,12 +27,6 @@ export default defineConfig({
 		presetUno(),
 		presetTagify(),
 		presetAttributify(),
-		presetIcons({
-			extraProperties: {
-				display: "inline-block",
-				"vertical-align": "middle"
-			}
-		}),
 		presetTypography(),
 		presetWebFonts({
 			fonts: {
