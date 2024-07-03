@@ -1,19 +1,28 @@
-<h1 align="center">Personal Nuxt 3 template</h1>
-<hr />
+<h1 align="center">Portfolio</h1>
 
-## Usage
+<br />
+<br />
 
-Clone to local:
-```sh
-$ npx degit NicolaSpadari/nuxt-template my-nuxt-app
-```
+<p align="center">
+	<img src="./assets/logo.svg" width="200" />
+</p>
 
-Install dependencies:
-```sh
-$ ni # or pnpm install
-```
+<br />
+<br />
 
-Run project:
-```sh
-$ nr dev # or pnpm run dev
-```
+## Deployed version
+
+https://nicolaspadari.dev
+
+## Tech stack
+
+- **Core**: Nuxt 3
+- **Styling**: UnoCSS
+- **CMS**: Storyblok
+- **Animations**: Gsap
+- **Smooth scroll**: Lenis
+- **Optimization**:
+	- Fontaine
+	- Nuxt Image
+	- Nuxt Icon
+	- Nuxt security
