@@ -1,6 +1,6 @@
 <template>
 	<Html min-h-screen>
-		<Body :class="{ 'overflow-y-hidden': open }">
+		<Body :class="{ 'overflow-y-hidden': open }" font-text antialiased>
 			<Lenis ref="lenis" :auto-raf="false" :options="lenisOptions" root>
 				<SiteNavbar :sections="sections" />
 

@@ -1,13 +1,13 @@
 <template>
 	<div absolute py-10 space-y-3>
 		<div flex flex-col>
-			<NuxtLink v-for="anchor in props.sections" :key="anchor._uid" :to="`#${anchor.component}`" py-3 text-lg>
+			<button v-for="anchor in props.sections" :key="anchor._uid" py-3 text-left text-lg @click="scrollSection(`#${anchor.component}`)">
 				{{ anchor.title }}
-			</NuxtLink>
+			</button>
 		</div>
 		<div flex gap-8>
 			<NuxtLink v-for="social in socials" :key="social.id" :to="social.link">
-				<span :class="social.icon" :font-controlled="false" h-7 w-7 />
+				<Icon :name="social.icon" size-7 />
 			</NuxtLink>
 		</div>
 	</div>
@@ -17,6 +17,15 @@
 	const props = defineProps<{
 		sections: SbBlokData[]
 	}>();
-
+	const emit = defineEmits(["scroll"]);
 	const { socials } = useConstants();
+
+	const scrollSection = (hash: string) => {
+		emit("scroll");
+		useGsap.to(window, {
+			scrollTo: hash,
+			duration: 1,
+			ease: "power3.inOut"
+		});
+	};
 </script>

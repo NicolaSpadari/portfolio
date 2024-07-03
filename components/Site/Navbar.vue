@@ -8,27 +8,27 @@
 
 				<div hidden md="flex gap-10">
 					<div flex items-center gap-10>
-						<NuxtLink v-for="anchor in props.sections" :key="anchor._uid" :to="`#${anchor.component}`" text-xl transition-opacity hover="opacity-65">
+						<button v-for="anchor in props.sections" :key="anchor._uid" text-xl transition-opacity hover="opacity-65" @click="scrollSection(`#${anchor.component}`)">
 							<span class="navbar-section" invisible>{{ anchor.title }}</span>
-						</NuxtLink>
+						</button>
 					</div>
 					<div flex items-center gap-8>
 						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" transition-opacity hover="opacity-65">
-							<span :class="social.icon" :font-controlled="false" h-7 w-7 />
+							<Icon :name="social.icon" size-7 />
 						</NuxtLink>
 					</div>
 				</div>
 
 				<div flex items-center md="hidden">
 					<button type="button" @click="handleMenu()">
-						<i-heroicons-solid-x-mark v-if="open" h-6 w-6 />
-						<i-heroicons-solid-bars-2 v-else h-6 w-6 />
+						<Icon v-if="open" name="heroicons-solid:x-mark" size-6 />
+						<Icon v-else name="heroicons-solid:bars-2" size-6 />
 					</button>
 				</div>
 			</div>
 
 			<div relative>
-				<SiteMenu :sections="props.sections" />
+				<SiteMenu :sections="props.sections" @scroll="handleMenu()" />
 			</div>
 		</div>
 	</nav>
@@ -72,5 +72,13 @@
 	const handleMenu = () => {
 		open.value = !open.value;
 		tl.reversed() ? tl.play() : tl.reverse();
+	};
+
+	const scrollSection = (hash: string) => {
+		useGsap.to(window, {
+			scrollTo: hash,
+			duration: 1,
+			ease: "power3.inOut"
+		});
 	};
 </script>

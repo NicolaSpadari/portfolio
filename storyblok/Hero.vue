@@ -3,7 +3,7 @@
 		<div crate-boxed h-full>
 			<div grid h-full items-center>
 				<div>
-					<p v-for="line in props.blok.content" :key="line._uid" lg="text-[5rem]" overflow-hidden text-5xl text-dark>
+					<p v-for="(line, lineIndex) in props.blok.content" :key="line._uid" lg="text-[5rem] mb-0" overflow-hidden text-5xl text-dark :class="{ 'mb-5': lineIndex === 0 }">
 						<span invisible inline-block class="line">{{ line.text }}</span>
 					</p>
 				</div>

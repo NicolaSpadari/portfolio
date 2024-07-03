@@ -8,13 +8,13 @@ export const useConstants = () => {
 
 	const socials = [
 		{
-			icon: "i-carbon-logo-github",
+			icon: "carbon:logo-github",
 			id: "github",
 			label: "GitHub",
 			link: github
 		},
 		{
-			icon: "i-carbon-logo-linkedin",
+			icon: "carbon:logo-linkedin",
 			id: "linkedin",
 			label: "LinkedIn",
 			link: linkedin
