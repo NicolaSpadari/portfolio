@@ -6,7 +6,7 @@
 			</button>
 		</div>
 		<div flex gap-8>
-			<NuxtLink v-for="social in socials" :key="social.id" :to="social.link">
+			<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" :aria-label="social.label">
 				<Icon :name="social.icon" size-7 />
 			</NuxtLink>
 		</div>
