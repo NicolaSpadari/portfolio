@@ -27,7 +27,8 @@ export default defineNuxtConfig({
 				lang: "en"
 			},
 			link: [
-				{ rel: "shortcut-icon", href: "/favicon.svg" }
+				{ rel: "shortcut-icon", href: "/favicon.svg" },
+				{ rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
 			],
 			noscript: [
 				{ children: "JavaScript is required to run this project" }
