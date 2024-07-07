@@ -11,7 +11,7 @@
 					<div md="col-start-7 col-span-6">
 						<div flex flex-col divide-y divide-gray-200>
 							<Experience v-for="experience in props.blok.content" :key="experience._uid" :experience="experience" />
-							<Btn v-if="props.blok.attachment.filename" class="button" :to="props.blok.attachment.filename" :icon="true" invisible>
+							<Btn v-if="props.blok.attachment.filename" class="magnet button" :to="props.blok.attachment.filename" :icon="true" :strength="1.5" invisible>
 								See full CV
 							</Btn>
 						</div>

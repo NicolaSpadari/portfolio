@@ -1,26 +1,26 @@
 <template>
-	<nav id="navbar" md="sticky" fixed inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-5>
+	<nav id="navbar" md="sticky" fixed inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-2>
 		<div crate>
 			<div class="navbar-content" flex transform justify-between translate-y="-150%">
-				<NuxtLink to="#" :aria-label="`${name} ${surname}`">
+				<NuxtLink to="#" :aria-label="`${name} ${surname}`" class="magnet" py-3>
 					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 				</NuxtLink>
 
-				<div hidden md="flex gap-10">
-					<div flex items-center gap-10>
-						<button v-for="anchor in props.sections" :key="anchor._uid" text-xl transition-opacity hover="opacity-65" @click="scrollSection(`#${anchor.component}`)">
-							<span class="navbar-section" invisible>{{ anchor.title }}</span>
+				<div hidden md="flex gap-5">
+					<div flex items-center gap-2>
+						<button v-for="anchor in props.sections" :key="anchor._uid" px-5 py-3 text-xl transition-opacity hover="opacity-65" class="page-link magnet" @click="scrollSection(`#${anchor.component}`)">
+							<span class="navbar-section inner" invisible>{{ anchor.title }}</span>
 						</button>
 					</div>
-					<div flex items-center gap-8>
-						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" transition-opacity hover="opacity-65" :aria-label="social.label">
+					<div flex items-center gap-2>
+						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" p-3 transition-opacity hover="opacity-65" class="magnet" :aria-label="social.label">
 							<Icon :name="social.icon" size-7 />
 						</NuxtLink>
 					</div>
 				</div>
 
 				<div flex items-center md="hidden">
-					<button type="button" @click="handleMenu()" aria-label="Toggle menu">
+					<button type="button" aria-label="Toggle menu" @click="handleMenu()">
 						<Icon v-if="open" name="heroicons-solid:x-mark" size-6 />
 						<Icon v-else name="heroicons-solid:bars-2" size-6 />
 					</button>
@@ -82,3 +82,12 @@
 		});
 	};
 </script>
+
+<style scoped>
+	.page-link:after{
+		@apply content-empty bg-neutral-800 absolute size-1.5 bottom-0 left-50% block rounded-full transform -translate-50% scale-0 transition-transform duration-300;
+	}
+	.page-link:hover:after{
+		@apply scale-100;
+	}
+</style>

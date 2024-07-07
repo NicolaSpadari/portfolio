@@ -4,7 +4,7 @@
 			<div crate>
 				<div flex flex-col gap-12 md="flex-row" lg="gap-32">
 					<div flex flex-col md="flex-row" gap-12>
-						<button type="button" mb-auto aria-label="Scroll to top" @click="scrollTop()">
+						<button type="button" mb-auto aria-label="Scroll to top" class="magnet" @click="scrollTop()">
 							<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 						</button>
 					</div>
@@ -13,12 +13,12 @@
 							I'm {{ name }} &ndash; a Frontend Web Developer based in Italy
 						</p>
 						<div>
-							<Btn :to="`mailto:${email}`" :external="true" :icon="true" inline-flex>
+							<Btn :to="`mailto:${email}`" :external="true" :icon="true" :strength="1.5" inline-flex class="magnet">
 								Email me
 							</Btn>
 						</div>
 						<div flex flex-wrap gap-6>
-							<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" text-base transition-opacity hover="opacity-65" :aria-label="social.label">
+							<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" class="magnet" text-base transition-opacity hover="opacity-65" :aria-label="social.label">
 								{{ social.label }}
 							</NuxtLink>
 							<span text-base text-neutral-500>&copy; {{ currentYear }}</span>

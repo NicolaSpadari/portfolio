@@ -43,7 +43,8 @@ export default defineNuxtConfig({
 				"style-src": [
 					"'self'",
 					"'unsafe-inline'",
-					"*.storyblok.com"
+					"*.storyblok.com",
+					"*.googleapis.com"
 				],
 				"script-src": [
 					"'self'",

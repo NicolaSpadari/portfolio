@@ -39,6 +39,8 @@
 
 	onMounted(() => {
 		useGsap.ticker.add(onFrame);
+		const elements = document.querySelectorAll(".magnet");
+		useMagnet(elements);
 	});
 
 	onBeforeUnmount(() => {
