@@ -4,7 +4,6 @@ import {
 	presetTagify,
 	presetTypography,
 	presetUno,
-	presetWebFonts,
 	transformerDirectives,
 	transformerVariantGroup
 } from "unocss";
@@ -21,23 +20,22 @@ export default defineConfig({
 		["crate", "mx-auto max-w-7xl px-10"],
 		["crate-boxed", "mx-auto max-w-3xl px-10"],
 		["flex-center", "flex justify-center items-center"],
-		["gradient", "animate-gradient animate-duration-[15s] animate-count-infinite"]
+		["gradient", "animate-gradient animate-duration-[15s] animate-count-infinite"],
+		["variate", "variation-weight-500 ease-in-out transition-all duration-500 hover:variation-weight-700"]
+	],
+	rules: [
+		[/^variation-weight-(\d+)$/, ([, w]) => ({ "font-variation-settings": `'wght' ${w}` })]
 	],
 	presets: [
 		presetUno(),
 		presetTagify(),
 		presetAttributify(),
-		presetTypography(),
-		presetWebFonts({
-			fonts: {
-				text: {
-					name: "Inter",
-					weights: [300, 400, 500]
-				}
-			}
-		})
+		presetTypography()
 	],
 	theme: {
+		fontFamily: {
+			text: "Inter"
+		},
 		breakpoints: {
 			sm: "576px",
 			md: "768px",

@@ -1,3 +1,5 @@
+import { colors } from "@unocss/preset-mini";
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -7,6 +9,7 @@ export default defineNuxtConfig({
 		"@nuxt/eslint",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
+		"@nuxtjs/google-fonts",
 		"@nuxtjs/fontaine",
 		"nuxt3-date-fns",
 		"nuxt3-lenis",
@@ -19,17 +22,13 @@ export default defineNuxtConfig({
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
-				{ name: "theme-color", content: "#ffffff" },
+				{ name: "theme-color", content: colors.white },
 				{ name: "format-detection", content: "no" },
 				{ name: "description", content: "My personal portfolio" }
 			],
 			htmlAttrs: {
 				lang: "en"
 			},
-			link: [
-				{ rel: "shortcut-icon", href: "/favicon.svg" },
-				{ rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
-			],
 			noscript: [
 				{ children: "JavaScript is required to run this project" }
 			]
@@ -77,6 +76,13 @@ export default defineNuxtConfig({
 	},
 	experimental: {
 		typedPages: true
+	},
+	googleFonts: {
+		families: {
+			Inter: [`${100}..${900}`]
+		},
+		display: "swap",
+		preconnect: true
 	},
 	css: [
 		"@unocss/reset/tailwind.css"

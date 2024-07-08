@@ -31,6 +31,7 @@
 		"@nuxt/eslint": "^0.3.13",
 		"@nuxt/icon": "^1.0.0",
 		"@nuxtjs/fontaine": "^0.4.3",
+		"@nuxtjs/google-fonts": "^3.2.0",
 		"@unocss/eslint-plugin": "^0.61.0",
 		"@unocss/nuxt": "^0.61.0",
 		"@vueuse/core": "^10.11.0",

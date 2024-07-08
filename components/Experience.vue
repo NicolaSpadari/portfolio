@@ -1,7 +1,7 @@
 <template>
 	<div class="experience" invisible flex flex-col gap-4 py-8 lg="py-12">
 		<div flex flex-col>
-			<span font-medium text="28px">{{ props.experience.name }}</span>
+			<span font-500 md="variate" text="28px">{{ props.experience.name }}</span>
 			<span block text-lg>
 				{{ props.experience.text }}
 			</span>
