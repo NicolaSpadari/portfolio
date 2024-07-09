@@ -23,6 +23,7 @@ https://nicolaspadari.dev
 - **Smooth scroll**: [Lenis](https://lenis.darkroom.engineering)
 - **Optimization**:
 	- [Fontaine](https://github.com/unjs/fontaine)
+	- [Nuxt Google Fonts](https://google-fonts.nuxtjs.org)
 	- [Nuxt Image](https://image.nuxt.com)
 	- [Nuxt Icon](https://github.com/nuxt/icon)
-	- [Nuxt security](https://nuxt-security.vercel.app)
+	- [Nuxt Security](https://nuxt-security.vercel.app)
