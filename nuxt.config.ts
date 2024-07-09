@@ -14,7 +14,8 @@ export default defineNuxtConfig({
 		"nuxt3-date-fns",
 		"nuxt3-lenis",
 		"nuxt-security",
-		"nuxt-svgo"
+		"nuxt-svgo",
+		"nuxt-gtag"
 	],
 	app: {
 		head: {

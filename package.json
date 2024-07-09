@@ -38,6 +38,7 @@
 		"@vueuse/nuxt": "^10.11.0",
 		"eslint": "8.57.0",
 		"nuxt": "^3.12.3",
+		"nuxt-gtag": "^2.0.6",
 		"nuxt-security": "2.0.0-beta.0",
 		"nuxt-svgo": "^4.0.1",
 		"nuxt3-date-fns": "^0.2.0",
