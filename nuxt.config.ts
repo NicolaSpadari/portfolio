@@ -9,8 +9,7 @@ export default defineNuxtConfig({
 		"@nuxt/eslint",
 		"@storyblok/nuxt",
 		"@hypernym/nuxt-gsap",
-		"@nuxtjs/google-fonts",
-		"@nuxtjs/fontaine",
+		"@nuxt/fonts",
 		"nuxt3-date-fns",
 		"nuxt3-lenis",
 		"nuxt-security",
@@ -25,7 +24,7 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: "theme-color", content: colors.white },
 				{ name: "format-detection", content: "no" },
-				{ name: "description", content: "My personal portfolio" }
+				{ name: "description", content: "Nicola Spadari's portfolio" }
 			],
 			htmlAttrs: {
 				lang: "en"
@@ -78,12 +77,10 @@ export default defineNuxtConfig({
 	experimental: {
 		typedPages: true
 	},
-	googleFonts: {
-		families: {
-			Inter: [`${100}..${900}`]
-		},
-		display: "swap",
-		preconnect: true
+	fonts: {
+		defaults: {
+			weights: [`${100}..${900}`]
+		}
 	},
 	css: [
 		"@unocss/reset/tailwind.css"
@@ -120,5 +117,6 @@ export default defineNuxtConfig({
 				type: true
 			}
 		]
-	}
+	},
+	compatibilityDate: "2024-09-10"
 });

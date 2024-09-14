@@ -1,3 +1,4 @@
+import { colors } from "@unocss/preset-mini";
 import {
 	defineConfig,
 	presetAttributify,
@@ -7,7 +8,6 @@ import {
 	transformerDirectives,
 	transformerVariantGroup
 } from "unocss";
-import { colors } from "@unocss/preset-mini";
 
 const lime = typeof colors?.lime === "string" ? colors?.lime : colors?.lime?.[50];
 const cyan = typeof colors?.cyan === "string" ? colors?.cyan : colors?.cyan?.[50];
