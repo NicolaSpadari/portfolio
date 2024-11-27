@@ -6,7 +6,7 @@
 			</button>
 		</div>
 		<div flex gap-8>
-			<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" :aria-label="social.label">
+			<NuxtLink v-for="social in Object.values(appConfig.socials)" :key="social.id" :to="social.link" :aria-label="social.label">
 				<Icon :name="social.icon" size-7 />
 			</NuxtLink>
 		</div>
@@ -18,7 +18,7 @@
 		sections: SbBlokData[]
 	}>();
 	const emit = defineEmits(["scroll"]);
-	const { socials } = useConstants();
+	const appConfig = useAppConfig();
 
 	const scrollSection = (hash: string) => {
 		emit("scroll");

@@ -2,7 +2,7 @@
 	<nav id="navbar" md="sticky" fixed inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-2>
 		<div crate>
 			<div class="navbar-content" flex transform justify-between translate-y="-150%">
-				<NuxtLink to="#" :aria-label="`${name} ${surname}`" class="magnet" py-3>
+				<NuxtLink to="#" :aria-label="`${appConfig.user.name} ${appConfig.user.surname}`" class="magnet" py-3>
 					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
 				</NuxtLink>
 
@@ -13,7 +13,7 @@
 						</button>
 					</div>
 					<div flex items-center gap-2>
-						<NuxtLink v-for="social in socials" :key="social.id" :to="social.link" p-3 transition-opacity hover="opacity-65" class="magnet" :aria-label="social.label">
+						<NuxtLink v-for="social in Object.values(appConfig.socials)" :key="social.id" :to="social.link" p-3 transition-opacity hover="opacity-65" class="magnet" :aria-label="social.label">
 							<Icon :name="social.icon" size-7 />
 						</NuxtLink>
 					</div>
@@ -39,7 +39,7 @@
 		sections: SbBlokData[]
 	}>();
 
-	const { socials, name, surname } = useConstants();
+	const appConfig = useAppConfig();
 	const { open } = useMenu();
 
 	const tl = useGsap.timeline({

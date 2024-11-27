@@ -26,10 +26,10 @@
 </template>
 
 <script lang="ts" setup>
-	const { upToDesktop } = useConstants();
+	const appConfig = useAppConfig();
 
 	onMounted(() => {
-		useGsap.matchMedia().add(upToDesktop, () => {
+		useGsap.matchMedia().add(appConfig.upToDesktopMediaQuery, () => {
 			useGsap.to(".writing-title", {
 				scrollTrigger: {
 					trigger: "#writing",

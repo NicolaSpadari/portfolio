@@ -25,10 +25,10 @@
 		blok: AboutStoryblok
 	}>();
 
-	const { upToDesktop } = useConstants();
+	const appConfig = useAppConfig();
 
 	onMounted(() => {
-		useGsap.matchMedia().add(upToDesktop, () => {
+		useGsap.matchMedia().add(appConfig.upToDesktopMediaQuery, () => {
 			useGsap.to(".about-title", {
 				scrollTrigger: {
 					trigger: "#about",

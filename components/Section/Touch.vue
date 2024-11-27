@@ -12,7 +12,7 @@
 					<div md="col-span-7">
 						<div flex flex-col gap-8>
 							<p class="touch-text" invisible text-xl lg="text-[22px]">
-								If you want to chat about a project &ndash; send me an email on <NuxtLink :to="`mailto:${email}`" font-medium underline transition-opacity hover="opacity-65">
+								If you want to chat about a project &ndash; send me an email on <NuxtLink :to="`mailto:${appConfig.user.email}`" font-medium underline transition-opacity hover="opacity-65">
 									hi@email.com
 								</NuxtLink>.
 							</p>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div md="col-span-3 col-start-9" flex flex-col gap-3>
-						<div v-for="social in socials" :key="social.id" transition-opacity duration-250 hover="opacity-65">
+						<div v-for="social in Object.values(appConfig.socials)" :key="social.id" transition-opacity duration-250 hover="opacity-65">
 							<NuxtLink :to="social.link" class="touch-social" invisible text-3xl font-medium underline>
 								{{ social.label }}
 							</NuxtLink>
@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-	const { socials, email } = useConstants();
+	const appConfig = useAppConfig();
 
 	onMounted(() => {
 		useGsap.from(".project-text", {

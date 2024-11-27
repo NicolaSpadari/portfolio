@@ -32,10 +32,10 @@
 		blok: SkillsStoryblok
 	}>();
 
-	const { upToDesktop } = useConstants();
+	const appConfig = useAppConfig();
 
 	onMounted(() => {
-		useGsap.matchMedia().add(upToDesktop, () => {
+		useGsap.matchMedia().add(appConfig.upToDesktopMediaQuery, () => {
 			useGsap.to(".skills-col", {
 				scrollTrigger: {
 					trigger: "#skills",

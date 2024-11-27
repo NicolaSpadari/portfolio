@@ -27,10 +27,10 @@
 		blok: ExperiencesStoryblok
 	}>();
 
-	const { upToDesktop } = useConstants();
+	const appConfig = useAppConfig();
 
 	onMounted(() => {
-		useGsap.matchMedia().add(upToDesktop, () => {
+		useGsap.matchMedia().add(appConfig.upToDesktopMediaQuery, () => {
 			useGsap.to(".experience-col", {
 				scrollTrigger: {
 					trigger: "#experiences",
