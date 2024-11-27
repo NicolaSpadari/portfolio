@@ -1,7 +1,4 @@
 {
-	// Enable the ESlint flat config support
-	"eslint.experimental.useFlatConfig": true,
-
 	// Use eslint as default formatter
 	"editor.formatOnSave": false,
 
