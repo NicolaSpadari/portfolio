@@ -8,6 +8,7 @@ import {
 	transformerDirectives,
 	transformerVariantGroup
 } from "unocss";
+import { presetScrollbar } from "unocss-preset-scrollbar";
 
 const lime = typeof colors?.lime === "string" ? colors?.lime : colors?.lime?.[50];
 const cyan = typeof colors?.cyan === "string" ? colors?.cyan : colors?.cyan?.[50];
@@ -21,7 +22,7 @@ export default defineConfig({
 		["crate-boxed", "mx-auto max-w-3xl px-10"],
 		["flex-center", "flex justify-center items-center"],
 		["gradient", "animate-gradient animate-duration-[15s] animate-count-infinite"],
-		["variate", "variation-weight-500 ease-in-out transition-all duration-500 hover:variation-weight-700"]
+		["variate", "variation-weight-500 ease-in-out transition-all duration-750 hover:(variation-weight-700 tracking-wide)"]
 	],
 	rules: [
 		[/^variation-weight-(\d+)$/, ([, w]) => ({ "font-variation-settings": `'wght' ${w}` })]
@@ -30,7 +31,8 @@ export default defineConfig({
 		presetUno(),
 		presetTagify(),
 		presetAttributify(),
-		presetTypography()
+		presetTypography(),
+		presetScrollbar()
 	],
 	theme: {
 		fontFamily: {

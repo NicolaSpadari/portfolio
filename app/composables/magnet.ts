@@ -19,7 +19,7 @@ export const useMagnet = (elements: NodeListOf<Element>) => {
 		});
 		const { width, height, left, top } = useElementBounding(target as MaybeComputedElementRef);
 
-		mm.add(`(min-width: ${breakpoints.lg})`, () => {
+		mm.add(`(min-width: ${breakpoints.md})`, () => {
 			useEventListener(target, "mousemove", () => {
 				useGsap.to(target.value, {
 					x: (((x.value - left.value) / width.value) - 0.2) * strength,

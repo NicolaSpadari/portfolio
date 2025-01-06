@@ -1,13 +1,13 @@
 <template>
-	<div class="experience" invisible flex flex-col gap-4 py-8 lg="py-12">
-		<div flex flex-col>
-			<span font-500 md="variate" text="28px">{{ props.experience.name }}</span>
-			<span block text-lg>
+	<div class="experience invisible flex flex-col gap-4 py-8" lg="py-12">
+		<div class="flex flex-col">
+			<span class="text-28px font-500" md="variate">{{ props.experience.name }}</span>
+			<span class="block text-lg">
 				{{ props.experience.text }}
 			</span>
 		</div>
-		<div flex items-center gap-2>
-			<span text-xl>
+		<div class="flex items-center gap-2">
+			<span class="text-xl">
 				{{ useFormat(props.experience.from, "MMM yyyy") }}
 
 				<template v-if="props.experience.to">

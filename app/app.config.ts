@@ -2,7 +2,7 @@ export default defineAppConfig({
 	user: {
 		name: "Nicola",
 		surname: "Spadari",
-		email: "spadari.nicola@gmail.com",
+		email: "spadari.nicola@gmail.com"
 	},
 	socials: {
 		github: {
@@ -19,5 +19,5 @@ export default defineAppConfig({
 		}
 	},
 	currentYear: new Date().getFullYear(),
-	upToDesktopMediaQuery: "(min-width: 992px)",
+	upToDesktopMediaQuery: "(min-width: 992px)"
 });

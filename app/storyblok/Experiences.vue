@@ -1,17 +1,17 @@
 <template>
-	<section id="experiences" :class="{ linkable: props.blok.linkable }" border-t border-gray-200>
-		<div py="90px" lg="py-30 space-y-16" space-y-10>
+	<section id="experiences" :class="{ linkable: props.blok.linkable }" class="border-t border-gray-200 text-zinc-900">
+		<div class="py-90px space-y-10" lg="py-30 space-y-16">
 			<div crate>
-				<div grid grid-cols-1 md="grid-cols-12" gap-10>
-					<div class="experience-col" md="col-span-4" pointer-events-none border-t-2 border-black>
-						<p lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
+				<div class="grid grid-cols-1 gap-10" md="grid-cols-12">
+					<div class="experience-col pointer-events-none border-t-2 border-zinc-900" md="col-span-4">
+						<p class="mt-6 text-4xl font-medium" lg="text-52px mt-10">
 							Experience
 						</p>
 					</div>
 					<div md="col-start-7 col-span-6">
-						<div flex flex-col divide-y divide-gray-200>
+						<div class="flex flex-col divide-y divide-gray-200">
 							<Experience v-for="experience in props.blok.content" :key="experience._uid" :experience="experience" />
-							<Btn v-if="props.blok.attachment.filename" class="magnet button" :to="props.blok.attachment.filename" :icon="true" :strength="1.5" invisible>
+							<Btn v-if="props.blok.attachment.filename" class="magnet button invisible" :to="props.blok.attachment.filename" :icon="true" :strength="1.5">
 								See full CV
 							</Btn>
 						</div>

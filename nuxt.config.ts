@@ -1,5 +1,7 @@
 import { colors } from "@unocss/preset-mini";
 
+const zinc50 = typeof colors?.zinc === "string" ? colors?.zinc : colors?.zinc?.[50];
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -22,7 +24,7 @@ export default defineNuxtConfig({
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
-				{ name: "theme-color", content: colors.white },
+				{ name: "theme-color", content: zinc50 },
 				{ name: "format-detection", content: "no" },
 				{ name: "description", content: "Nicola Spadari's portfolio" }
 			],
@@ -49,6 +51,7 @@ export default defineNuxtConfig({
 					"'self'",
 					"'unsafe-inline'",
 					"'unsafe-eval'",
+					"*.googletagmanager.com",
 					"*.storyblok.com",
 					"*.netlify.app"
 				],
@@ -118,5 +121,8 @@ export default defineNuxtConfig({
 			}
 		]
 	},
-	compatibilityDate: "2024-09-10"
+	future: {
+		compatibilityVersion: 4
+	},
+	compatibilityDate: "2025-01-01"
 });

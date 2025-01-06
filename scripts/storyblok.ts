@@ -1,6 +1,6 @@
 import { exec } from "node:child_process";
-import { promisify } from "node:util";
 import { readFile, unlink, writeFile } from "node:fs/promises";
+import { promisify } from "node:util";
 import "dotenv/config";
 
 const space = process.env.STORYBLOK_SPACE;

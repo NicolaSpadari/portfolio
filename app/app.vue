@@ -1,6 +1,13 @@
 <template>
-	<Html min-h-screen>
-		<Body :class="{ 'overflow-y-hidden': open }" font-text antialiased>
+	<Html class="min-h-100dvh">
+		<Body
+			:class="{
+				'overflow-y-hidden': open,
+				'rotate-180': enabled,
+			}"
+			class="font-text antialiased bg-zinc-50"
+			scrollbar="~ rounded"
+		>
 			<Lenis ref="lenis" :auto-raf="false" :options="lenisOptions" root>
 				<SiteNavbar :sections="sections" />
 
@@ -16,6 +23,7 @@
 
 <script lang="ts" setup>
 	const { open } = useMenu();
+	const { enabled } = useEasterEgg();
 	const sections = ref<SbBlokData[]>([]);
 	const lenis = ref<any>(null);
 

@@ -1,33 +1,33 @@
 <template>
-	<nav id="navbar" md="sticky" fixed inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-2>
+	<nav id="navbar" :class="enabled ? 'fixed' : 'fixed md:sticky'" class="inset-x-0 top-0 z-5 w-full gradient overflow-hidden py-2">
 		<div crate>
-			<div class="navbar-content" flex transform justify-between translate-y="-150%">
-				<NuxtLink to="#" :aria-label="`${appConfig.user.name} ${appConfig.user.surname}`" class="magnet" py-3>
-					<SvgoLogo h-10 w-10 text-black :font-controlled="false" />
+			<div class="navbar-content flex transform justify-between -translate-y-150%">
+				<NuxtLink to="#" :aria-label="`${appConfig.user.name} ${appConfig.user.surname}`" class="magnet py-3">
+					<SvgoLogo :font-controlled="false" class="size-10 text-zinc-900" />
 				</NuxtLink>
 
-				<div hidden md="flex gap-5">
-					<div flex items-center gap-2>
-						<button v-for="anchor in props.sections" :key="anchor._uid" px-5 py-3 text-xl transition-opacity hover="opacity-65" class="page-link magnet" @click="scrollSection(`#${anchor.component}`)">
-							<span class="navbar-section inner" invisible>{{ anchor.title }}</span>
+				<div class="hidden text-zinc-900" md="flex gap-5">
+					<div class="flex items-center gap-2">
+						<button v-for="anchor in props.sections" :key="anchor._uid" class="magnet page-link px-5 py-3 text-xl transition-opacity" hover="opacity-65" @click="scrollSection(`#${anchor.component}`)">
+							<span class="inner navbar-section" invisible>{{ anchor.title }}</span>
 						</button>
 					</div>
-					<div flex items-center gap-2>
-						<NuxtLink v-for="social in Object.values(appConfig.socials)" :key="social.id" :to="social.link" p-3 transition-opacity hover="opacity-65" class="magnet" :aria-label="social.label">
-							<Icon :name="social.icon" size-7 />
+					<div class="flex items-center gap-2">
+						<NuxtLink v-for="social in Object.values(appConfig.socials)" :key="social.id" :to="social.link" class="magnet p-3 transition-opacity" hover="opacity-65" :aria-label="social.label">
+							<Icon :name="social.icon" class="size-7" />
 						</NuxtLink>
 					</div>
 				</div>
 
-				<div flex items-center md="hidden">
+				<div class="flex items-center" md="hidden">
 					<button type="button" aria-label="Toggle menu" @click="handleMenu()">
-						<Icon v-if="open" name="heroicons-solid:x-mark" size-6 />
-						<Icon v-else name="heroicons-solid:bars-2" size-6 />
+						<Icon v-if="open" name="carbon:close" class="size-6" />
+						<Icon v-else name="carbon:menu" class="size-6" />
 					</button>
 				</div>
 			</div>
 
-			<div relative>
+			<div class="relative">
 				<SiteMenu :sections="props.sections" @scroll="handleMenu()" />
 			</div>
 		</div>
@@ -40,6 +40,7 @@
 	}>();
 
 	const appConfig = useAppConfig();
+	const { enabled } = useEasterEgg();
 	const { open } = useMenu();
 
 	const tl = useGsap.timeline({

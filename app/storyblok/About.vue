@@ -1,18 +1,18 @@
 <template>
-	<section id="about" :class="{ linkable: props.blok.linkable }" border-t border-gray-200>
-		<div crate py="90px" lg="py-30">
-			<div flex flex-col gap-10 border-t-2 border-black lg="gap-20">
-				<p class="about-title" lg="text-[52px] mt-10" mt-6 text-4xl font-medium>
+	<section id="about" :class="{ linkable: props.blok.linkable }" class="border-t border-gray-200 text-zinc-900">
+		<div crate class="py-90px" lg="py-30">
+			<div class="flex flex-col gap-10 border-t-2 border-zinc-900" lg="gap-20">
+				<p class="about-title mt-6 text-4xl font-medium" lg="text-52px mt-10">
 					{{ props.blok.title }}
 				</p>
-				<div grid grid-cols-1 md="grid-cols-12" gap-10>
-					<div class="about-text" md="col-span-4" pointer-events-none>
-						<p text-2xl lg="text-[32px]" font-medium>
+				<div class="grid grid-cols-1 gap-10" md="grid-cols-12">
+					<div class="about-text pointer-events-none" md="col-span-4">
+						<p class="text-2xl font-medium" lg="text-32px">
 							{{ props.blok.text }}
 						</p>
 					</div>
-					<div md="col-start-7 col-span-6" flex flex-col gap-10>
-						<div v-for="paragraph in props.blok.content" :key="paragraph._uid" class="about-desc" invisible text-xl lg="text-[22px]" v-html="useRichText(paragraph.text!)" />
+					<div class="flex flex-col gap-10" md="col-start-7 col-span-6">
+						<div v-for="paragraph in props.blok.content" :key="paragraph._uid" class="about-desc invisible text-xl" lg="text-22px" v-html="useRichText(paragraph.text!)" />
 					</div>
 				</div>
 			</div>
