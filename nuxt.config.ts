@@ -26,7 +26,11 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: "theme-color", content: zinc50 },
 				{ name: "format-detection", content: "no" },
-				{ name: "description", content: "Nicola Spadari's portfolio" }
+				{ name: "description", content: "Nicola Spadari's portfolio" },
+				{ property: "og:title", content: "Nicola Spadari" },
+				{ property: "og:type", content: "website" },
+				{ property: "og:description", content: "Nicola Spadari's portfolio" },
+				{ property: "og:image", content: "/preview.png" },
 			],
 			htmlAttrs: {
 				lang: "en"
@@ -64,7 +68,8 @@ export default defineNuxtConfig({
 				],
 				"connect-src": [
 					"'self'",
-					"*.storyblok.com"
+					"*.storyblok.com",
+					"*.google-analytics.com"
 				],
 				"img-src": [
 					"'self'",
@@ -89,7 +94,7 @@ export default defineNuxtConfig({
 		"@unocss/reset/tailwind.css"
 	],
 	svgo: {
-		autoImportPath: "./assets/"
+		autoImportPath: "@/assets/"
 	},
 	gsap: {
 		composables: true,
@@ -98,11 +103,14 @@ export default defineNuxtConfig({
 			scrollTo: true
 		}
 	},
+	gtag: {
+		id: process.env.GTAG_ID
+	},
 	storyblok: {
 		accessToken: process.env.STORYBLOK_ACCESS_TOKEN
 	},
 	image: {
-		provider: "ipx"
+		domains: ["a.storyblok.com"]
 	},
 	icon: {
 		mode: "svg"

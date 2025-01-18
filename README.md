@@ -4,7 +4,7 @@
 <br />
 
 <p align="center">
-	<img src="./assets/logo.svg" width="200" />
+	<img src="./app/assets/logo.svg" width="200" />
 </p>
 
 <br />
@@ -22,7 +22,6 @@ https://nicolaspadari.dev
 - **Animations**: [Gsap](https://gsap.com)
 - **Smooth scroll**: [Lenis](https://lenis.darkroom.engineering)
 - **Optimization**:
-	- [Fontaine](https://github.com/unjs/fontaine)
 	- [Nuxt Google Fonts](https://google-fonts.nuxtjs.org)
 	- [Nuxt Image](https://image.nuxt.com)
 	- [Nuxt Icon](https://github.com/nuxt/icon)
