@@ -56,7 +56,7 @@
 	});
 </script>
 
-<style lang="scss">
+<style>
 	html {
 		-webkit-tap-highlight-color: transparent;
 	}

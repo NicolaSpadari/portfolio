@@ -27,6 +27,7 @@ export default eslintConfig(
 				baseIndent: 1
 			}],
 			"antfu/top-level-function": "off",
+			"antfu/if-newline": "off",
 			"node/prefer-global/process": ["off"]
 		}
 	},

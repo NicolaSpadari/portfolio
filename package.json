@@ -21,32 +21,31 @@
 		"lint": "eslint . --fix"
 	},
 	"dependencies": {
-		"@storyblok/nuxt": "^6.2.1",
-		"nuxt": "^3.15.1",
+		"@storyblok/nuxt": "^6.2.2",
+		"nuxt": "^3.15.4",
 		"nuxt3-lenis": "^1.5.9",
 		"vue": "^3.5.13",
 		"vue-router": "^4.5.0"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^3.12.1",
+		"@antfu/eslint-config": "^4.2.1",
 		"@hypernym/nuxt-gsap": "^2.4.3",
-		"@iconify-json/carbon": "^1.2.5",
-		"@nuxt/eslint": "^0.7.4",
+		"@iconify-json/carbon": "^1.2.7",
+		"@nuxt/eslint": "^1.0.1",
 		"@nuxt/fonts": "^0.10.3",
 		"@nuxt/icon": "^1.10.3",
-		"@nuxt/image": "^1.8.1",
-		"@unocss/eslint-plugin": "^0.65.3",
-		"@unocss/nuxt": "^0.65.3",
-		"@vueuse/core": "^12.3.0",
-		"@vueuse/nuxt": "^12.3.0",
+		"@nuxt/image": "^1.9.0",
+		"@unocss/eslint-plugin": "^65.5.0",
+		"@unocss/nuxt": "^65.5.0",
+		"@vueuse/core": "^12.7.0",
+		"@vueuse/nuxt": "^12.7.0",
 		"eslint": "9.15.0",
 		"nuxt-gtag": "^3.0.2",
 		"nuxt-security": "^2.1.5",
-		"nuxt-svgo": "^4.0.11",
+		"nuxt-svgo": "^4.0.14",
 		"nuxt3-date-fns": "^0.2.0",
-		"sass": "^1.83.1",
 		"tsx": "^4.19.2",
-		"typescript": "^5.7.2",
-		"unocss-preset-scrollbar": "^0.3.1"
+		"typescript": "^5.7.3",
+		"unocss-preset-scrollbar": "^3.2.0"
 	}
 }
